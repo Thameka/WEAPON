@@ -137,10 +137,10 @@ var NarratorBeretBjorn = new character("", getSpriteURL("3"), new Audio(getAudio
 var MysteryThalea = new character("???", getSpriteURL("narrator"), new Audio(getAudioURL("bleepfemale")));
 var NarratorBeretThalea = new character("", getSpriteURL("1"), new Audio(getAudioURL("bleepgrave")));
 var NarratorBeretLussie = new character("", getSpriteURL("5"), new Audio(getAudioURL("bleepgrave")));
-var NarratorBjorn = new character ("", getSpriteURL("narrator"), new Audio(getAudioURL("boopgrave")));
-var NarratorBjornLussie = new character ("", getSpriteURL("5"), new Audio(getAudioURL("boopgrave")));
-var NarratorBjornThalea = new character ("", getSpriteURL("1"), new Audio(getAudioURL("boopgrave")));
-var Zhuraid = new character ("Zhuraid", getSpriteURL("narrator"), new Audio(getAudioURL("retrobleep")));
+var NarratorBjorn = new character("", getSpriteURL("narrator"), new Audio(getAudioURL("boopgrave")));
+var NarratorBjornLussie = new character("", getSpriteURL("5"), new Audio(getAudioURL("boopgrave")));
+var NarratorBjornThalea = new character("", getSpriteURL("1"), new Audio(getAudioURL("boopgrave")));
+var Zhuraid = new character("Zhuraid", getSpriteURL("narrator"), new Audio(getAudioURL("retrobleep")));
 //#characters END
 
 //ACT 3 
@@ -151,7 +151,7 @@ var A3S3 = new Scene([
         new dialog(NarratorBeretBjorn, "Bjorn and Thaléa were the last crew members we were waiting for."),
         new dialog(NarratorBeretThalea, "As both of them stepped on the main deck, I could feel that they had somehow become a little bit closer."),
         new dialog(Beret, "So... Let's talk about this weapon..."),
-new Background(getBackgroundURL("outsideview2")),
+        new Background(getBackgroundURL("outsideview2")),
         new dialog(Narrator, "Starlog, end. After a long and productive meeting on the main deck, we came to the conclusion that both anthropological and chemical analysis of the vial and its background point to the liquid inside being a truth serum."),
         new dialog(Narrator, "This technology has never been attained by our civilization, and was thought to be science-fiction. The substance can be easily replicated."),
         new dialog(Narrator, "Our mission is now to take the truth serum to the nearest safest starbase so that it can be kept away from the Danish."),
@@ -167,390 +167,400 @@ new Background(getBackgroundURL("outsideview2")),
 
 //SCENE 2 : ANTHROPOLOGIST'S OFFICE
 //SCENE 2 CHOICES
-var A3expedition = new Choice(function(){changeConv (1)}, "About the expedition...");
-var A3thalea = new Choice(function(){changeConv (2)}, "About you...");
+var A3expedition = new Choice(function () { changeConv(1) }, "About the expedition...");
+var A3thalea = new Choice(function () { changeConv(2) }, "About you...");
 
-var A3necralis = new Choice(function(){changeConv (4)}, "About Necralis and Terra...");
-var A3weapon = new Choice(function(){changeConv (7)}, "About you...");
-var A3thatsall = new Choice(function(){if(checkInventory("TruthWeapon")){
-    changeConv(5);}
-    else{
-    changeConv(3);
-    }}, "I think we've said it all.");
+var A3necralis = new Choice(function () { changeConv(4) }, "About Necralis and Terra...");
+var A3weapon = new Choice(function () { changeConv(7) }, "About you...");
+var A3thatsall = new Choice(function () {
+    if (checkInventory("TruthWeapon")) {
+        changeConv(5);
+    }
+    else {
+        changeConv(3);
+    }
+}, "I think we've said it all.");
 
-var A3room = new Choice(function(){changeConv (6)}, "What is all of this in your room?");
-var A3anthropologist = new Choice(function(){changeConv (8)}, "Why did you become an anthropologist?"); 
+var A3room = new Choice(function () { changeConv(6) }, "What is all of this in your room?");
+var A3anthropologist = new Choice(function () { changeConv(8) }, "Why did you become an anthropologist?");
 
-var A3pray = new Choice(function(){if(checkInventory("Love")){
-    changeConv(13);}
-    else{
-    changeConv(14);
-    }}, "Have you ever prayed?");
+var A3pray = new Choice(function () {
+    if (checkInventory("Love")) {
+        changeConv(13);
+    }
+    else {
+        changeConv(14);
+    }
+}, "Have you ever prayed?");
 
-var A3author1 = new Choice(function(){changeConv (9)}, "Pär Lagerkvist.");
-var A3author2 = new Choice(function(){changeConv (9)}, "Selma Lagerlöf.");
-var A3author3 = new Choice(function(){changeConv (10)}, "Karin Boye.");
+var A3author1 = new Choice(function () { changeConv(9) }, "Pär Lagerkvist.");
+var A3author2 = new Choice(function () { changeConv(9) }, "Selma Lagerlöf.");
+var A3author3 = new Choice(function () { changeConv(10) }, "Karin Boye.");
 
-var A3poison = new Choice(function(){changeConv (11)}, "A poison.");
-var A3hallu = new Choice(function(){changeConv (11)}, "A hallucinogenic substance.");
-var A3truthserum = new Choice(function(){addToInventory("TruthWeapon"); changeConv (12)}, "A truth serum.");
+var A3poison = new Choice(function () { changeConv(11) }, "A poison.");
+var A3hallu = new Choice(function () { changeConv(11) }, "A hallucinogenic substance.");
+var A3truthserum = new Choice(function () { addToInventory("TruthWeapon"); changeConv(12) }, "A truth serum.");
 
-var A3definitely = new Choice(function(){changeConv (15)}, "Definitely.");
-var A3tooearly = new Choice(function(){changeConv (16)}, "It's too early to say.");
+var A3definitely = new Choice(function () { changeConv(15) }, "Definitely.");
+var A3tooearly = new Choice(function () { changeConv(16) }, "It's too early to say.");
 
-var A3friends = new Choice(function(){changeConv (17)}, "We were friends.");
-var A3lovers = new Choice(function(){changeConv (18)}, "We were lovers.");
+var A3friends = new Choice(function () { changeConv(17) }, "We were friends.");
+var A3lovers = new Choice(function () { changeConv(18) }, "We were lovers.");
 
-var A3fine = new Choice(function(){changeConv (15)}, "I think it's fine.");
-var A3go = new Choice(function(){changeConv (20)}, "I should go.");
+var A3fine = new Choice(function () { changeConv(15) }, "I think it's fine.");
+var A3go = new Choice(function () { changeConv(20) }, "I should go.");
 
-var A3hug = new Choice(function(){changeConv (22)}, "Go for a hug.");
-var A3wait = new Choice(function(){changeConv (21)}, "Wait.");
-var A3soft = new Choice(function(){changeConv (19)}, "I look?...");
+var A3hug = new Choice(function () { changeConv(22) }, "Go for a hug.");
+var A3wait = new Choice(function () { changeConv(21) }, "Wait.");
+var A3soft = new Choice(function () { changeConv(19) }, "I look?...");
+
+var conclusion = new Choice(function () { changeScene(A3S3, 0) }, "Let's start the meeting.");
 
 //SCENE 2 CHOICES END
 var A3S2 = new Scene([
-new Conv([
-new Background(getBackgroundURL("black")),
-new dialog(NarratorBjorn, "Upon leaving the main deck, I headed directly for the anthropologist's office."),
-new dialog(NarratorBjorn, "Although I never spent too much time in that office before, I found it rapidly, thanks to my outstanding sense of direction."),
-new dialog(Bjorn, "Hello. This is Björn, the Chief of Security. We are back from our expedition, and I have some things to discuss with you."),
-new dialog(Bjorn, "Can I enter?"),
-new dialog(Thalea, "Ah. Hello, Björn. Of course-- Door, open."),
-new Background(getBackgroundURL("Anthropologist")),
-new dialog(NarratorBjorn, "When I entered the room, it seemed quite obvious to me that this anthropologist had just gotten settled in. The room was somewhat impersonal."),
-new dialog(NarratorBjorn, "However, upon looking around, I noticed certain personal items scattered around."),
-new dialog(Bjorn, "What a nice view you have, from this office."),
-new dialog(Thalea, "Yes. I would even say it is quite charming right now."),
-new dialog(Bjorn, "Agreed. The stars are nice."),
-new dialog(NarratorBjornThalea, "Upon hearing my answer, I sensed the finch's gaze lingering on me. No idea why, though."),
-new dialog(Thalea, "What did you want to talk about?"),
-new ChoiceArray([A3expedition, A3thalea]),
-]),
+    new Conv([
+        new Background(getBackgroundURL("black")),
+        new dialog(NarratorBjorn, "Upon leaving the main deck, I headed directly for the anthropologist's office."),
+        new dialog(NarratorBjorn, "Although I never spent too much time in that office before, I found it rapidly, thanks to my outstanding sense of direction."),
+        new dialog(Bjorn, "Hello. This is Björn, the Chief of Security. We are back from our expedition, and I have some things to discuss with you."),
+        new dialog(Bjorn, "Can I enter?"),
+        new dialog(Thalea, "Ah. Hello, Björn. Of course-- Door, open."),
+        new Background(getBackgroundURL("Anthropologist")),
+        new dialog(NarratorBjorn, "When I entered the room, it seemed quite obvious to me that this anthropologist had just gotten settled in. The room was somewhat impersonal."),
+        new dialog(NarratorBjorn, "However, upon looking around, I noticed certain personal items scattered around."),
+        new dialog(Bjorn, "What a nice view you have, from this office."),
+        new dialog(Thalea, "Yes. I would even say it is quite charming right now."),
+        new dialog(Bjorn, "Agreed. The stars are nice."),
+        new dialog(NarratorBjornThalea, "Upon hearing my answer, I sensed the finch's gaze lingering on me. No idea why, though."),
+        new dialog(Thalea, "What did you want to talk about?"),
+        new ChoiceArray([A3expedition, A3thalea]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "I thought the place we visited was quite interesting. I think some of the things we found might be of interest to you."),
-    new dialog(Thalea, "Did you bring any items except the weapon?"),
-    new dialog(Bjorn, "Unfortunately, no. We are told to interfere as little as possible with alien findings."),
-    new dialog(Thalea, "Like urbex."),
-    new dialog(Bjorn, "What?"),
-    new dialog(Thalea, "Nevermind."),
-    new dialog(Bjorn, "Anyway... I also have orders to determine the nature of the weapon we recovered as soon as possible. The Captain thought you might be able to help me."),
-    new dialog(Thalea, "Now that's interesting."),
-    new ChoiceArray([A3necralis, A3weapon, A3thalea, A3thatsall]),
-]),
+    new Conv([
+        new dialog(Bjorn, "I thought the place we visited was quite interesting. I think some of the things we found might be of interest to you."),
+        new dialog(Thalea, "Did you bring any items except the weapon?"),
+        new dialog(Bjorn, "Unfortunately, no. We are told to interfere as little as possible with alien findings."),
+        new dialog(Thalea, "Like urbex."),
+        new dialog(Bjorn, "What?"),
+        new dialog(Thalea, "Nevermind."),
+        new dialog(Bjorn, "Anyway... I also have orders to determine the nature of the weapon we recovered as soon as possible. The Captain thought you might be able to help me."),
+        new dialog(Thalea, "Now that's interesting."),
+        new ChoiceArray([A3necralis, A3weapon, A3thalea, A3thatsall]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "About me? What is it you want to know about me?"),
-    new ChoiceArray([A3room, A3anthropologist, A3expedition, A3thatsall]),
-]),
+    new Conv([
+        new dialog(Thalea, "About me? What is it you want to know about me?"),
+        new ChoiceArray([A3room, A3anthropologist, A3expedition, A3thatsall]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "I don't know... I feel like we're missing a crucial information. Are you sure you've told me everything?"),
-    new dialog(Bjorn, "Come to think of it... Let's talk a bit more."),
-    new dialog(Thalea, "Lay it on me!"),
-    new dialog(Bjorn, "Later."),
-    new dialog(Thalea, "What did you say?"),
-    new dialog(Bjorn, "Nothing. (Damn it. What did it come out so naturally?)"),
-    new ChoiceArray([A3thalea, A3expedition]),
-]),
+    new Conv([
+        new dialog(Thalea, "I don't know... I feel like we're missing a crucial information. Are you sure you've told me everything?"),
+        new dialog(Bjorn, "Come to think of it... Let's talk a bit more."),
+        new dialog(Thalea, "Lay it on me!"),
+        new dialog(Bjorn, "Later."),
+        new dialog(Thalea, "What did you say?"),
+        new dialog(Bjorn, "Nothing. (Damn it. What did it come out so naturally?)"),
+        new ChoiceArray([A3thalea, A3expedition]),
+    ]),
 
-new Conv([
-    new dialog(NarratorBjornThalea, "I explained to the anthropologist the obsession of Zhuraid with Terra, formerly called Earth."),
-    new dialog(NarratorBjornThalea, "It seems to pique her interest, as she kept asking for more details. As I was trying to remember those events as accurately as possible, her small, round eyes kept on widening."),
-    new dialog(Bjorn, "... I think that's about it."),
-    new dialog(Thalea, "That's absolutely fascinating!"),
-    new dialog(Thalea, "Björn, that is a very big breakthrough!"),
-    new dialog(Bjorn, "Is it?"),
-    new dialog(Thalea, "Of course! We had no idea Necralis had any kind of contact with our civilization. This is the first I hear about this."),
-    new dialog(Thalea, "We need to go back so I can take a look at all of this!"),
-    new dialog(Bjorn, "I... I think we're too far away now, though."),
-    new dialog(Thalea, "Make the ship go back!"),
-    new dialog(Bjorn, "I can--"),
-    new dialog(Thalea, "Make the ship go back!!!"),
-    new dialog(Bjorn, "You--"),
-    new dialog(Thalea, "NOW!"),
-    new dialog(Bjorn, "YOU HAVE TO TALK TO THE CAPTAIN!"),
-    new dialog(Thalea, "... Ah, really?"),
-    new dialog(Bjorn, "Yes. Sheesh."),
-    new dialog(Thalea, "Ah. I guess I will, then."),
-    new dialog(Bjorn, "..."),
-    new dialog(Thalea, "Anyway, anything else you wanted to ask?"),
-    new ChoiceArray([A3weapon, A3thalea, A3thatsall]),
-]),
+    new Conv([
+        new dialog(NarratorBjornThalea, "I explained to the anthropologist the obsession of Zhuraid with Terra, formerly called Earth."),
+        new dialog(NarratorBjornThalea, "It seems to pique her interest, as she kept asking for more details. As I was trying to remember those events as accurately as possible, her small, round eyes kept on widening."),
+        new dialog(Bjorn, "... I think that's about it."),
+        new dialog(Thalea, "That's absolutely fascinating!"),
+        new dialog(Thalea, "Björn, that is a very big breakthrough!"),
+        new dialog(Bjorn, "Is it?"),
+        new dialog(Thalea, "Of course! We had no idea Necralis had any kind of contact with our civilization. This is the first I hear about this."),
+        new dialog(Thalea, "We need to go back so I can take a look at all of this!"),
+        new dialog(Bjorn, "I... I think we're too far away now, though."),
+        new dialog(Thalea, "Make the ship go back!"),
+        new dialog(Bjorn, "I can--"),
+        new dialog(Thalea, "Make the ship go back!!!"),
+        new dialog(Bjorn, "You--"),
+        new dialog(Thalea, "NOW!"),
+        new dialog(Bjorn, "YOU HAVE TO TALK TO THE CAPTAIN!"),
+        new dialog(Thalea, "... Ah, really?"),
+        new dialog(Bjorn, "Yes. Sheesh."),
+        new dialog(Thalea, "Ah. I guess I will, then."),
+        new dialog(Bjorn, "..."),
+        new dialog(Thalea, "Anyway, anything else you wanted to ask?"),
+        new ChoiceArray([A3weapon, A3thalea, A3thatsall]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "I agree. I think... You should report back to your Captain now."),
-    new dialog(NarratorBjornThalea, "Although she said that, I could see her eyes lingering on me... Again."),
-    new dialog(NarratorBjornThalea, "To be honest, something in me made me want to stay a little bit more."),
-    new ChoiceArray([A3pray]),
-]),
+    new Conv([
+        new dialog(Thalea, "I agree. I think... You should report back to your Captain now."),
+        new dialog(NarratorBjornThalea, "Although she said that, I could see her eyes lingering on me... Again."),
+        new dialog(NarratorBjornThalea, "To be honest, something in me made me want to stay a little bit more."),
+        new ChoiceArray([A3pray]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "Ah... Those are just some belongings I care about a lot."),
-    new dialog(Thalea, "Things I like."),
-    new dialog(Bjorn, "So you like..."),
-    new dialog(Bjorn, "Plushes..."),
-    new dialog(Bjorn, "And books."),
-    new dialog(Thalea, "... Yes. That's about it."),
-    new dialog(Bjorn, "I see."),
-    new dialog(Bjorn, "What is that thing next to your computer?"),
-    new dialog(Thalea, "... A book?"),
-    new dialog(Bjorn, "... Haha. Very funny."),
-    new dialog(Thalea, "I know."),
-    new dialog(Thalea, "It's a guampa. It comes from south american culture. There's some teréré in it."),
-    new dialog(Bjorn, "What's teréré? It sounds a bit familiar, somehow."),
-    new dialog(Thalea, "It's caffeine. Basically."),
-    new dialog(Bjorn, "So, it is inferior coffee."),
-    new dialog(Thalea, "I-- It's not--"),
-    new dialog(Bjorn, "I see."),
-    new ChoiceArray([A3anthropologist, A3expedition, A3thatsall]),
-]),
+    new Conv([
+        new dialog(Thalea, "Ah... Those are just some belongings I care about a lot."),
+        new dialog(Thalea, "Things I like."),
+        new dialog(Bjorn, "So you like..."),
+        new dialog(Bjorn, "Plushes..."),
+        new dialog(Bjorn, "And books."),
+        new dialog(Thalea, "... Yes. That's about it."),
+        new dialog(Bjorn, "I see."),
+        new dialog(Bjorn, "What is that thing next to your computer?"),
+        new dialog(Thalea, "... A book?"),
+        new dialog(Bjorn, "... Haha. Very funny."),
+        new dialog(Thalea, "I know."),
+        new dialog(Thalea, "It's a guampa. It comes from south american culture. There's some teréré in it."),
+        new dialog(Bjorn, "What's teréré? It sounds a bit familiar, somehow."),
+        new dialog(Thalea, "It's caffeine. Basically."),
+        new dialog(Bjorn, "So, it is inferior coffee."),
+        new dialog(Thalea, "I-- It's not--"),
+        new dialog(Bjorn, "I see."),
+        new ChoiceArray([A3anthropologist, A3expedition, A3thatsall]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "What is it exactly that you found?"),
-    new dialog(Bjorn, "It was a small vial. With some kind of liquid inside."),
-    new dialog(NarratorBjornThalea, "I then proceeded to explain to Thaléa what the diary said about that weapon."),
-    new dialog(Thalea, "So it is a substance that is meant to be replicated, and it is meant to help preserve peace. Mmh."),
-    new dialog(Thalea, "I have to admit that it is a very curious thing to me, because Necralians really don't have malevolent minds, from what we know. I can't imagine that they would create a substance that could explicitly harm people."),
-    new dialog(Bjorn, "Could it be something more subtle?"),
-    new dialog(Thalea, "Maybe. But without any other clue..."),
-    new dialog(Bjorn, "Actually... There is another clue that could help us."),
-    new dialog(Thalea, "Ah! Pray tell."),
-    new dialog(Bjorn, "It was an excerpt from a swedish novel."),
-    new dialog(Thalea, "Svenska!"),
-    new dialog(Bjorn, "... Do you speak Swedish?"),
-    new dialog(Thalea, "Of course."),
-    new dialog(NarratorBjornThalea, "Come to think of it, there WAS a Swedish flag in the corner of her office."),
-    new dialog(Bjorn, "But why?"),
-    new dialog(Thalea, "I don't have the faintest idea."),
-    new dialog(Bjorn, "... Whatever. I think I know where that quote came from, or at least I've got an inkling about it..."),
-    new dialog(Thalea, "What was the quote?"),
-    new dialog(Bjorn, "I remember some of it. It went..."),
-    new dialog(Bjorn, "Är det inte underligt att allting mister sitt värde så fort det upphör att vara en gåva - till och med sanningen?"),
-    new dialog(Thalea, "... !"),
-    new dialog(Bjorn, "I think it was written by..."),
-    new ChoiceArray([A3author1, A3author2, A3author3]),
-]),
+    new Conv([
+        new dialog(Thalea, "What is it exactly that you found?"),
+        new dialog(Bjorn, "It was a small vial. With some kind of liquid inside."),
+        new dialog(NarratorBjornThalea, "I then proceeded to explain to Thaléa what the diary said about that weapon."),
+        new dialog(Thalea, "So it is a substance that is meant to be replicated, and it is meant to help preserve peace. Mmh."),
+        new dialog(Thalea, "I have to admit that it is a very curious thing to me, because Necralians really don't have malevolent minds, from what we know. I can't imagine that they would create a substance that could explicitly harm people."),
+        new dialog(Bjorn, "Could it be something more subtle?"),
+        new dialog(Thalea, "Maybe. But without any other clue..."),
+        new dialog(Bjorn, "Actually... There is another clue that could help us."),
+        new dialog(Thalea, "Ah! Pray tell."),
+        new dialog(Bjorn, "It was an excerpt from a swedish novel."),
+        new dialog(Thalea, "Svenska!"),
+        new dialog(Bjorn, "... Do you speak Swedish?"),
+        new dialog(Thalea, "Of course."),
+        new dialog(NarratorBjornThalea, "Come to think of it, there WAS a Swedish flag in the corner of her office."),
+        new dialog(Bjorn, "But why?"),
+        new dialog(Thalea, "I don't have the faintest idea."),
+        new dialog(Bjorn, "... Whatever. I think I know where that quote came from, or at least I've got an inkling about it..."),
+        new dialog(Thalea, "What was the quote?"),
+        new dialog(Bjorn, "I remember some of it. It went..."),
+        new dialog(Bjorn, "Är det inte underligt att allting mister sitt värde så fort det upphör att vara en gåva - till och med sanningen?"),
+        new dialog(Thalea, "... !"),
+        new dialog(Bjorn, "I think it was written by..."),
+        new ChoiceArray([A3author1, A3author2, A3author3]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "I've always been fascinated by foreign cultures. It started out with languages."),
-    new dialog(Thalea, "Then, I found out that if I became an anthropologist, I could fly away from Terra."),
-    new dialog(Bjorn, "Do you have something against Terra?"),
-    new dialog(Thalea, "No... Not really. I just like moving around. Feeling free."),
-    new dialog(Bjorn, "I see. You are a bird after all."),
-    new dialog(Bjorn, "How did you get into languages in the first place?"),
-    new dialog(Thalea, "Sweden."),
-    new dialog(Bjorn, "Sweden? Interesting. I'm Swedish."),
-    new dialog(Thalea, "No kidding. I would never have guessed..."),
-    new dialog(Thalea, "Björn."),
-    new dialog(Bjorn, "... I could be norwegian."),
-    new dialog(Thalea, "Too discreet."),
-    new dialog(Bjorn, "... Danish..."),
-    new dialog(Thalea, "Don't see any beer can in your hand."),
-    new dialog(Bjorn, "True."),
-    new dialog(Bjorn, "Did you know that danish kids..."),
-    new dialog(Thalea, "No Björn. I'm stopping you right there. No."),
-    new dialog(Bjorn, "... have trouble pronounc-"),
-    new dialog(Thalea, "This is my office and I can expel you from it at any time."),
-    new dialog(Bjorn, "(I'd like to see you try.)"),
-    new dialog(Thalea, "Jokes aside, I've known even before learning your name... For some reason."),
-    new dialog(Bjorn, "(And I have a feeling you're French, although I couldn't explain why.)"),
-    new ChoiceArray([A3room, A3expedition, A3thatsall]),
-]),
+    new Conv([
+        new dialog(Thalea, "I've always been fascinated by foreign cultures. It started out with languages."),
+        new dialog(Thalea, "Then, I found out that if I became an anthropologist, I could fly away from Terra."),
+        new dialog(Bjorn, "Do you have something against Terra?"),
+        new dialog(Thalea, "No... Not really. I just like moving around. Feeling free."),
+        new dialog(Bjorn, "I see. You are a bird after all."),
+        new dialog(Bjorn, "How did you get into languages in the first place?"),
+        new dialog(Thalea, "Sweden."),
+        new dialog(Bjorn, "Sweden? Interesting. I'm Swedish."),
+        new dialog(Thalea, "No kidding. I would never have guessed..."),
+        new dialog(Thalea, "Björn."),
+        new dialog(Bjorn, "... I could be norwegian."),
+        new dialog(Thalea, "Too discreet."),
+        new dialog(Bjorn, "... Danish..."),
+        new dialog(Thalea, "Don't see any beer can in your hand."),
+        new dialog(Bjorn, "True."),
+        new dialog(Bjorn, "Did you know that danish kids..."),
+        new dialog(Thalea, "No Björn. I'm stopping you right there. No."),
+        new dialog(Bjorn, "... have trouble pronounc-"),
+        new dialog(Thalea, "This is my office and I can expel you from it at any time."),
+        new dialog(Bjorn, "(I'd like to see you try.)"),
+        new dialog(Thalea, "Jokes aside, I've known even before learning your name... For some reason."),
+        new dialog(Bjorn, "(And I have a feeling you're French, although I couldn't explain why.)"),
+        new ChoiceArray([A3room, A3expedition, A3thatsall]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "That doesn't sound right, I'm sorry to say."),
-    new dialog(Bjorn, "Ah, well then, it has to be..."),
-    new ChoiceArray([A3author1, A3author2, A3author3]),
-]),
+    new Conv([
+        new dialog(Thalea, "That doesn't sound right, I'm sorry to say."),
+        new dialog(Bjorn, "Ah, well then, it has to be..."),
+        new ChoiceArray([A3author1, A3author2, A3author3]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "Yes! That's it! Karin Boye."),
-    new dialog(Bjorn, "You know about her?"),
-    new dialog(Thalea, "Of course. She is my favourite swedish author."),
-    new dialog(Bjorn, "Wow. So young people can like classic swedish literature."),
-    new dialog(Thalea, "It a quote from the book Kallocain."),
-    new dialog(Bjorn, "I see. Yes, that vaguely rings a bell."),
-    new dialog(Thalea, "You should read it."),
-    new dialog(Bjorn, "I should!"),
-    new dialog(Bjorn, "It would be a good call. Cain-d of me to do so."),
-    new dialog(Thalea, "Yes it would indeed."),
-    new dialog(Bjorn, "(She missed the pun. Ah, it was an awful one anyway.)"),
-    new dialog(Thalea, "Indeed, with this hint, the nature of that vial becomes very clear."),
-    new dialog(Bjorn, "If you think about it, I guess it does."),
-    new dialog(Thalea, "It is actually genius, because it cannot really harm, yet it can turn the tide around in any kind of conflict-- especially against oppression."),
-    new dialog(Bjorn, "Yes. It has to be..."),
-    new ChoiceArray([A3poison, A3hallu, A3truthserum]),
-]),
+    new Conv([
+        new dialog(Thalea, "Yes! That's it! Karin Boye."),
+        new dialog(Bjorn, "You know about her?"),
+        new dialog(Thalea, "Of course. She is my favourite swedish author."),
+        new dialog(Bjorn, "Wow. So young people can like classic swedish literature."),
+        new dialog(Thalea, "It a quote from the book Kallocain."),
+        new dialog(Bjorn, "I see. Yes, that vaguely rings a bell."),
+        new dialog(Thalea, "You should read it."),
+        new dialog(Bjorn, "I should!"),
+        new dialog(Bjorn, "It would be a good call. Cain-d of me to do so."),
+        new dialog(Thalea, "Yes it would indeed."),
+        new dialog(Bjorn, "(She missed the pun. Ah, it was an awful one anyway.)"),
+        new dialog(Thalea, "Indeed, with this hint, the nature of that vial becomes very clear."),
+        new dialog(Bjorn, "If you think about it, I guess it does."),
+        new dialog(Thalea, "It is actually genius, because it cannot really harm, yet it can turn the tide around in any kind of conflict-- especially against oppression."),
+        new dialog(Bjorn, "Yes. It has to be..."),
+        new ChoiceArray([A3poison, A3hallu, A3truthserum]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "No... I don't think that's it. It's a bit too much of a violent invention for Necralians."),
-    new dialog(Thalea, "Come on Björn. You can do it."),
-    new ChoiceArray([A3poison, A3hallu, A3truthserum]),
-]),
+    new Conv([
+        new dialog(Thalea, "No... I don't think that's it. It's a bit too much of a violent invention for Necralians."),
+        new dialog(Thalea, "Come on Björn. You can do it."),
+        new ChoiceArray([A3poison, A3hallu, A3truthserum]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "Yes! That's exactly it! It has to be a truth serum!"),
-    new dialog(Bjorn, "Mh. It could have indeed turned the tide if the Danish had put their dirty hands on it."),
-    new dialog(Thalea, "Yes. Say goodbye to your spies, and to your war secrets."),
-    new dialog(Bjorn, "It makes me worried, though-- I hope it won't get out of hand. As soon as we're done here, I will report back to the Captain."),
-    new dialog(Thalea, "It's a good idea."),
-    new dialog(Thalea, "What an exciting discovery. There are many uses for a truth serum, but it really is a poisonous apple."),
-    new dialog(Bjorn, "I agree."),
-    new dialog(Thalea, "Phew. Now that we've shed some light on that vial, is there anything else you wanted to ask about?"),
-    new ChoiceArray([A3necralis, A3thalea, A3thatsall]),
-]),
+    new Conv([
+        new dialog(Thalea, "Yes! That's exactly it! It has to be a truth serum!"),
+        new dialog(Bjorn, "Mh. It could have indeed turned the tide if the Danish had put their dirty hands on it."),
+        new dialog(Thalea, "Yes. Say goodbye to your spies, and to your war secrets."),
+        new dialog(Bjorn, "It makes me worried, though-- I hope it won't get out of hand. As soon as we're done here, I will report back to the Captain."),
+        new dialog(Thalea, "It's a good idea."),
+        new dialog(Thalea, "What an exciting discovery. There are many uses for a truth serum, but it really is a poisonous apple."),
+        new dialog(Bjorn, "I agree."),
+        new dialog(Thalea, "Phew. Now that we've shed some light on that vial, is there anything else you wanted to ask about?"),
+        new ChoiceArray([A3necralis, A3thalea, A3thatsall]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "Praying? Why? That is a very old practice."),
-    new dialog(Bjorn, "I've told you, there was a church. In the crypt."),
-    new dialog(Thalea, "Yes?"),
-    new dialog(Bjorn, "Well, I prayed there."),
-    new dialog(Thalea, "You prayed to what?"),
-    new dialog(Bjorn, "It's a bit embarrassing."),
-    new dialog(Bjorn, "(I don't know why I'm so willing to share this. I feel somehow compelled to do it.)"),
-    new dialog(Bjorn, "I prayed... to find love."),
-    new dialog(Thalea, "...!"),
-    new dialog(Thalea, "To find love. I see. Did you have anyone in mind?"),
-    new dialog(Bjorn, "Not really. But images flashed through my mind."),
-    new dialog(Thalea, "What were the images about?"),
-    new dialog(Bjorn, "It was finches flying accross a stormy sky."),
-    new dialog(Thalea, "Finches..."),
-    new dialog(NarratorBjornThalea, "Silence fell on the office, for a short while. But for some reason, it didn't feel awkward."),
-    new dialog(Thalea, "You know, Björn..."),
-    new dialog(Bjorn, "Yes?"),
-    new dialog(Thalea, "I feel like I've already met you before. Although it is a bit silly to say."),
-    new dialog(Bjorn, "I do have the same impression."),
-    new dialog(Thalea, "Do you think it is a good thing?"),
-    new dialog(NarratorBjornThalea, "It was strange to have this conversation with a stranger, but it somehow felt right."),
-    new ChoiceArray([A3definitely, A3tooearly]),
-]),
+    new Conv([
+        new dialog(Thalea, "Praying? Why? That is a very old practice."),
+        new dialog(Bjorn, "I've told you, there was a church. In the crypt."),
+        new dialog(Thalea, "Yes?"),
+        new dialog(Bjorn, "Well, I prayed there."),
+        new dialog(Thalea, "You prayed to what?"),
+        new dialog(Bjorn, "It's a bit embarrassing."),
+        new dialog(Bjorn, "(I don't know why I'm so willing to share this. I feel somehow compelled to do it.)"),
+        new dialog(Bjorn, "I prayed... to find love."),
+        new dialog(Thalea, "...!"),
+        new dialog(Thalea, "To find love. I see. Did you have anyone in mind?"),
+        new dialog(Bjorn, "Not really. But images flashed through my mind."),
+        new dialog(Thalea, "What were the images about?"),
+        new dialog(Bjorn, "It was finches flying accross a stormy sky."),
+        new dialog(Thalea, "Finches..."),
+        new dialog(NarratorBjornThalea, "Silence fell on the office, for a short while. But for some reason, it didn't feel awkward."),
+        new dialog(Thalea, "You know, Björn..."),
+        new dialog(Bjorn, "Yes?"),
+        new dialog(Thalea, "I feel like I've already met you before. Although it is a bit silly to say."),
+        new dialog(Bjorn, "I do have the same impression."),
+        new dialog(Thalea, "Do you think it is a good thing?"),
+        new dialog(NarratorBjornThalea, "It was strange to have this conversation with a stranger, but it somehow felt right."),
+        new ChoiceArray([A3definitely, A3tooearly]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "Praying? Why? That is a very old practice."),
-    new dialog(Bjorn, "I've told you, there was a church. In the crypt."),
-    new dialog(Thalea, "Yes?"),
-    new dialog(Bjorn, "Well, I prayed there."),
-    new dialog(Thalea, "You prayed to what?"),
-    new dialog(Bjorn, "I prayed... For gurka."),
-    new dialog(Thalea, "For... Gurka..."),
-    new dialog(Bjorn, "Yes. Don't you like gurka?"),
-    new dialog(Thalea, "I do, but..."),
-    new dialog(Bjorn, "Well, the prices have risen a lot recently. So I prayed to get gurka back."),
-    new dialog(Thalea, "I see."),
-    new dialog(NarratorBjornThalea, "I saw Thaléa gesture towards the holographic receiver. She typed a number in, and..."),
-    new dialog(Beret, "Captain Béret here. What is it, Thaléa?"),
-    new dialog(Thalea, "... We've uncovered the secret of the weapon, most probably. I'm sending you Björn back immediately for a report."),
-    new dialog(Beret, "Understood."),
-    new dialog(Bjorn, "I suppose I'll take my leave now, then."),
-    new dialog(Thalea, "Yes. Go ahead. I hope we'll get another chance to talk!"),
-    new dialog(Bjorn, "Me too. Thank you for receiving me in your office."),
-    new dialog(NarratorBjornThalea, "On those words, I left Thaléa's office. The goodbyes were quite abrupt, but I couldn't put my finger on as to why. Maybe she didn't like the turn the conversation had taken?"),
-    new dialog(NarratorBjorn, "In any case, I returned quickly to the main deck."),
-    new ChangeScene(A3S3, 0),
-]),
+    new Conv([
+        new dialog(Thalea, "Praying? Why? That is a very old practice."),
+        new dialog(Bjorn, "I've told you, there was a church. In the crypt."),
+        new dialog(Thalea, "Yes?"),
+        new dialog(Bjorn, "Well, I prayed there."),
+        new dialog(Thalea, "You prayed to what?"),
+        new dialog(Bjorn, "I prayed... For gurka."),
+        new dialog(Thalea, "For... Gurka..."),
+        new dialog(Bjorn, "Yes. Don't you like gurka?"),
+        new dialog(Thalea, "I do, but..."),
+        new dialog(Bjorn, "Well, the prices have risen a lot recently. So I prayed to get gurka back."),
+        new dialog(Thalea, "I see."),
+        new dialog(NarratorBjornThalea, "I saw Thaléa gesture towards the holographic receiver. She typed a number in, and..."),
+        new dialog(Beret, "Captain Béret here. What is it, Thaléa?"),
+        new dialog(Thalea, "... We've uncovered the secret of the weapon, most probably. I'm sending you Björn back immediately for a report."),
+        new dialog(Beret, "Understood."),
+        new dialog(Bjorn, "I suppose I'll take my leave now, then."),
+        new dialog(Thalea, "Yes. Go ahead. I hope we'll get another chance to talk!"),
+        new dialog(Bjorn, "Me too. Thank you for receiving me in your office."),
+        new dialog(NarratorBjornThalea, "On those words, I left Thaléa's office. The goodbyes were quite abrupt, but I couldn't put my finger on as to why. Maybe she didn't like the turn the conversation had taken?"),
+        new dialog(NarratorBjorn, "In any case, I returned quickly to the main deck."),
+        new ChoiceArray([conclusion]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "I don't have any bad feelings about this, at least."),
-    new dialog(Thalea, "... What could this mean, though?"),
-    new dialog(Bjorn, "Lussie..."),
-    new dialog(Bjorn, "(I can't believe I'm quoting Lussie.)"),
-    new dialog(Bjorn, "Lussie said that maybe those strong deja-vu impressions come from former lives."),
-    new dialog(Thalea, "I don't believe in reincarnation, though."),
-    new dialog(Bjorn, "Me neither. But, maybe..."),
-    new dialog(NarratorBjornThalea, "She was looking at me with a mysterious expression in her eyes."),
-    new ChoiceArray([A3friends, A3lovers]),
-]),
+    new Conv([
+        new dialog(Bjorn, "I don't have any bad feelings about this, at least."),
+        new dialog(Thalea, "... What could this mean, though?"),
+        new dialog(Bjorn, "Lussie..."),
+        new dialog(Bjorn, "(I can't believe I'm quoting Lussie.)"),
+        new dialog(Bjorn, "Lussie said that maybe those strong deja-vu impressions come from former lives."),
+        new dialog(Thalea, "I don't believe in reincarnation, though."),
+        new dialog(Bjorn, "Me neither. But, maybe..."),
+        new dialog(NarratorBjornThalea, "She was looking at me with a mysterious expression in her eyes."),
+        new ChoiceArray([A3friends, A3lovers]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "Is it?"),
-    new dialog(Bjorn, "Yes. After all, I don't know you that much."),
-    new dialog(Thalea, "I see. I guess not."),
-    new dialog(NarratorBjornThalea, "I felt a little bit more distance between us."),
-    new dialog(Bjorn, "But, anyway..."),
-    new ChoiceArray([A3fine, A3go]),
-]),
+    new Conv([
+        new dialog(Thalea, "Is it?"),
+        new dialog(Bjorn, "Yes. After all, I don't know you that much."),
+        new dialog(Thalea, "I see. I guess not."),
+        new dialog(NarratorBjornThalea, "I felt a little bit more distance between us."),
+        new dialog(Bjorn, "But, anyway..."),
+        new ChoiceArray([A3fine, A3go]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "You're right, maybe we were!"),
-    new dialog(Thalea, "Maybe we traveled around together."),
-    new dialog(Thalea, "Let's say you were Swedish and I was French..."),
-    new dialog(Thalea, "It would be a big coincidence to have met you."),
-    new dialog(Bjorn, "Agreed."),
-    new dialog(NarratorBjornThalea, "The silence that fell upon us was filled with some kind of warmth."),
-    new ChoiceArray([A3hug, A3go]),
-]),
+    new Conv([
+        new dialog(Thalea, "You're right, maybe we were!"),
+        new dialog(Thalea, "Maybe we traveled around together."),
+        new dialog(Thalea, "Let's say you were Swedish and I was French..."),
+        new dialog(Thalea, "It would be a big coincidence to have met you."),
+        new dialog(Bjorn, "Agreed."),
+        new dialog(NarratorBjornThalea, "The silence that fell upon us was filled with some kind of warmth."),
+        new ChoiceArray([A3hug, A3go]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "Maybe we were lovers."),
-    new dialog(NarratorBjornThalea, "It seemed to me that she had stiffened a little bit. Then, she relaxed."),
-    new dialog(Thalea, "I do feel an unexplainable bond between us."),
-    new dialog(Bjorn, "Me too. It is strange."),
-    new dialog(Thalea, "You look..."),
-    new dialog(NarratorBjornThalea, "She stopped there. Should I insist?"),
-    new ChoiceArray([A3soft, A3go]),
-]),
+    new Conv([
+        new dialog(Bjorn, "Maybe we were lovers."),
+        new dialog(NarratorBjornThalea, "It seemed to me that she had stiffened a little bit. Then, she relaxed."),
+        new dialog(Thalea, "I do feel an unexplainable bond between us."),
+        new dialog(Bjorn, "Me too. It is strange."),
+        new dialog(Thalea, "You look..."),
+        new dialog(NarratorBjornThalea, "She stopped there. Should I insist?"),
+        new ChoiceArray([A3soft, A3go]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "That's awkward..."),
-    new dialog(Thalea, "You look very soft."),
-    new dialog(Bjorn, "..."),
-    new dialog(NarratorBjornThalea, "I didn't know what to think."),
-    new dialog(NarratorBjornThalea, "So I answered honestly."),
-    new dialog(Bjorn, "So do you."),
-    new dialog(Thalea, "..."),
-    new ChoiceArray([A3hug, A3wait]),
-]),
+    new Conv([
+        new dialog(Thalea, "That's awkward..."),
+        new dialog(Thalea, "You look very soft."),
+        new dialog(Bjorn, "..."),
+        new dialog(NarratorBjornThalea, "I didn't know what to think."),
+        new dialog(NarratorBjornThalea, "So I answered honestly."),
+        new dialog(Bjorn, "So do you."),
+        new dialog(Thalea, "..."),
+        new ChoiceArray([A3hug, A3wait]),
+    ]),
 
-new Conv([
-    new dialog(NarratorBjornThalea, "This felt maybe a little bit awkward."),
-    new dialog(Thalea, "Ah... You're going to report back, aren't you?"),
-    new dialog(Bjorn, "Yes. There is no time to lose."),
-    new dialog(Thalea, "Perfect, I--"),
-    new dialog(NarratorBjornThalea, "Suddenly, the holographic receiver rang."),
-    new dialog(Thalea, "... Yes?"),
-    new dialog(Beret, "This is Captain Béret. We have the results of the vial's analysis. I think everyone should come to the main deck so that we can all report on our findings."),
-    new dialog(Bjorn, "Ah, roger that. We'll be on our way."),
-    new dialog(NarratorBjornThalea, "Thaléa first exited the room."),
-    new dialog(NarratorBjorn, "And I soon went after her, to the main deck."),
-    new ChangeScene(A3S3, 0),
-]),
+    new Conv([
+        new dialog(NarratorBjornThalea, "This felt maybe a little bit awkward."),
+        new dialog(Thalea, "Ah... You're going to report back, aren't you?"),
+        new dialog(Bjorn, "Yes. There is no time to lose."),
+        new dialog(Thalea, "Perfect, I--"),
+        new dialog(NarratorBjornThalea, "Suddenly, the holographic receiver rang."),
+        new dialog(Thalea, "... Yes?"),
+        new dialog(Beret, "This is Captain Béret. We have the results of the vial's analysis. I think everyone should come to the main deck so that we can all report on our findings."),
+        new dialog(Bjorn, "Ah, roger that. We'll be on our way."),
+        new dialog(NarratorBjornThalea, "Thaléa first exited the room."),
+        new dialog(NarratorBjorn, "And I soon went after her, to the main deck."),
+        new ChoiceArray([conclusion]),
+    ]),
 
-new Conv([
-    new dialog(Thalea, "How strange. I never felt like this before."),
-    new dialog(Bjorn, "Mmh. It is quite curious. I'm sorry if I overstepped boundaries."),
-    new dialog(NarratorBjornThalea, "She stared at me and chuckled. It felt like being in a bubble, out of time and space, for a short moment. When suddenly, the holographic receiver rang."),
-    new dialog(Thalea, "... Yes?"),
-    new dialog(Beret, "This is Captain Béret. We have the results of the vial's analysis. I think everyone should come to the main deck so that we can all report on our findings."),
-    new dialog(Bjorn, "Ah, roger that. We'll be on our way."),
-    new dialog(NarratorBjornThalea, "The interruption breaking the momentum we had going on, we somehow both felt a tiny bit awkward. However, I could feel we had bridged a first gap."),
-    new Background(getBackgroundURL("black")),
-    new dialog(NarratorBjornThalea, "As Thaléa exited the room, my eyes lingered on her..."),
-    new dialog(NarratorBjornThalea, "Completely unnoticed."),
-    new ChangeScene(A3S3, 0),
-]),
+    new Conv([
+        new dialog(Thalea, "How strange. I never felt like this before."),
+        new dialog(Bjorn, "Mmh. It is quite curious. I'm sorry if I overstepped boundaries."),
+        new dialog(NarratorBjornThalea, "She stared at me and chuckled. It felt like being in a bubble, out of time and space, for a short moment. When suddenly, the holographic receiver rang."),
+        new dialog(Thalea, "... Yes?"),
+        new dialog(Beret, "This is Captain Béret. We have the results of the vial's analysis. I think everyone should come to the main deck so that we can all report on our findings."),
+        new dialog(Bjorn, "Ah, roger that. We'll be on our way."),
+        new dialog(NarratorBjornThalea, "The interruption breaking the momentum we had going on, we somehow both felt a tiny bit awkward. However, I could feel we had bridged a first gap."),
+        new Background(getBackgroundURL("black")),
+        new dialog(NarratorBjornThalea, "As Thaléa exited the room, my eyes lingered on her..."),
+        new dialog(NarratorBjornThalea, "Completely unnoticed."),
+        new ChoiceArray([conclusion]),
+    ]),
 
-new Conv([
-    new dialog(NarratorBjornThalea, "Somehow shyly, I gestured towards the anthropologist, arms open."),
-    new dialog(NarratorBjornThalea, "I felt like giving her some sort of greeting hug."),
-    new dialog(Bjorn, "(It feels like meeting a friend again after a very long time.)"),
-    new dialog(NarratorBjornThalea, "She took a step towards me, smiling. But suddenly, the holographic receiver rang."),
-    new dialog(Thalea, "... Yes?"),
-    new dialog(Beret, "This is Captain Béret. We have the results of the vial's analysis. I think everyone should come to the main deck so that we can all report on our findings."),
-    new dialog(Bjorn, "Ah, roger that. We'll be on our way."),
-    new dialog(NarratorBjornThalea, "The moment was gone. However, I could feel we had bridged a first gap. It didn't feel uncomfortable-- We looked at each other briefly and smiled."),
-    new Background(getBackgroundURL("black")),
-    new dialog(NarratorBjornThalea, "As Thaléa exited the room, my eyes lingered on her..."),
-    new dialog(NarratorBjornThalea, "Completely unnoticed."),
-    new ChangeScene(A3S3, 0),
-]),
+    new Conv([
+        new dialog(NarratorBjornThalea, "Somehow shyly, I gestured towards the anthropologist, arms open."),
+        new dialog(NarratorBjornThalea, "I felt like giving her some sort of greeting hug."),
+        new dialog(Bjorn, "(It feels like meeting a friend again after a very long time.)"),
+        new dialog(NarratorBjornThalea, "She took a step towards me, smiling. But suddenly, the holographic receiver rang."),
+        new dialog(Thalea, "... Yes?"),
+        new dialog(Beret, "This is Captain Béret. We have the results of the vial's analysis. I think everyone should come to the main deck so that we can all report on our findings."),
+        new dialog(Bjorn, "Ah, roger that. We'll be on our way."),
+        new dialog(NarratorBjornThalea, "The moment was gone. However, I could feel we had bridged a first gap. It didn't feel uncomfortable-- We looked at each other briefly and smiled."),
+        new Background(getBackgroundURL("black")),
+        new dialog(NarratorBjornThalea, "As Thaléa exited the room, my eyes lingered on her..."),
+        new dialog(NarratorBjornThalea, "Completely unnoticed."),
+        new ChoiceArray([conclusion]),
+    ]),
 ]);
 //SCENE 2 END
 
 //SCENE 1 : MAIN DECK
+var itwill = new Choice(function () { changeScene(A3S2, 0) }, "It will...");
+
 var A3S1 = new Scene([
-    new Conv ([
+    new Conv([
         new Background(getBackgroundURL("outsideview2")),
         new dialog(Narrator, "Captain's log, supplemental."),
         new dialog(Narrator, "The small away-team I sent to retrieve the weapon the Danish are after is finally back. But they brought something unexpected."),
@@ -592,7 +602,7 @@ var A3S1 = new Scene([
         new dialog(Coati, "Mmh... I see."),
         new dialog(Beret, "So... We will just have to keep it safe until we arrive."),
         new dialog(Coati, "... It will have to be well protected indeed."),
-        new ChangeScene(A3S2, 0),
+        new ChoiceArray([itwill]),
     ]),
 ]);
 //SCENE 1 END
@@ -601,253 +611,259 @@ var A3S1 = new Scene([
 //ACT 2
 //SCENE 5 : AI
 // SCENE 5 CHOICES
-var A2S511 = new Choice(function(){changeConv (2)}, "We need the weapon.");
-var A2S512 = new Choice(function(){changeConv (3)}, "Aren't you supposed to be dead?");
-var A2S513 = new Choice(function(){changeScene(A2S2, 1)}, "I'll be back.");
+var A2S511 = new Choice(function () { changeConv(2) }, "We need the weapon.");
+var A2S512 = new Choice(function () { changeConv(3) }, "Aren't you supposed to be dead?");
+var A2S513 = new Choice(function () { changeScene(A2S2, 1) }, "I'll be back.");
 
-var A2S521 = new Choice(function(){changeConv (5)}, "I have read many things about you.");
-var A2S522 = new Choice(function(){changeConv (1)}, "I need to think about it.");
+var A2S521 = new Choice(function () { changeConv(5) }, "I have read many things about you.");
+var A2S522 = new Choice(function () { changeConv(1) }, "I need to think about it.");
 
-var A2S531 = new Choice(function(){changeConv (4)}, "You were all about your work.");
-var A2S532 = new Choice(function(){changeConv (6)}, "Family was important to you.");
-var A2S533 = new Choice(function(){changeConv (4)}, "Traveling was your purpose.");
+var A2S531 = new Choice(function () { changeConv(4) }, "You were all about your work.");
+var A2S532 = new Choice(function () { changeConv(6) }, "Family was important to you.");
+var A2S533 = new Choice(function () { changeConv(4) }, "Traveling was your purpose.");
 
-var A2S541 = new Choice(function(){changeConv (4)}, "Five.");
-var A2S542 = new Choice(function(){changeConv (4)}, "Two.");
-var A2S543 = new Choice(function(){changeConv (7)}, "Nine.");
+var A2S541 = new Choice(function () { changeConv(4) }, "Five.");
+var A2S542 = new Choice(function () { changeConv(4) }, "Two.");
+var A2S543 = new Choice(function () { changeConv(7) }, "Nine.");
 
-var A2S551 = new Choice(function(){changeConv (8)}, "Talk about Necralis.");
-var A2S552 = new Choice(function(){changeConv (9)}, "Talk about Terra.");
-var A2S553 = new Choice(function(){changeConv (10)}, "Talk about war.");
+var A2S551 = new Choice(function () { changeConv(8) }, "Talk about Necralis.");
+var A2S552 = new Choice(function () { changeConv(9) }, "Talk about Terra.");
+var A2S553 = new Choice(function () { changeConv(10) }, "Talk about war.");
 
-var A2S561 = new Choice(function(){changeConv (11)}, "The mbeju.");
-var A2S562 = new Choice(function(){changeConv (4)}, "The teréré.");
+var A2S561 = new Choice(function () { changeConv(11) }, "The mbeju.");
+var A2S562 = new Choice(function () { changeConv(4) }, "The teréré.");
 
-var A2S571 = new Choice(function(){changeConv (4)}, "It would be used to attain peace.");
-var A2S572 = new Choice(function(){changeConv (4)}, "It would be used to ascertain our safety.");
-var A2S573 = new Choice(function(){addToInventory("serum"); changeConv (12)}, "Ideally, it would not be used.");
+var A2S571 = new Choice(function () { changeConv(4) }, "It would be used to attain peace.");
+var A2S572 = new Choice(function () { changeConv(4) }, "It would be used to ascertain our safety.");
+var A2S573 = new Choice(function () { addToInventory("serum"); changeConv(12) }, "Ideally, it would not be used.");
 
-var A2S581 = new Choice(function(){changeScene (A2S2, 1)}, "Let's go back to the corridor.");
-var A2S582 = new Choice(function(){changeScene (A2S1, 1)}, "Let's go back to the entrance.");
+var A2S581 = new Choice(function () { changeScene(A2S2, 1) }, "Let's go back to the corridor.");
+var A2S582 = new Choice(function () { changeScene(A2S1, 1) }, "Let's go back to the entrance.");
 // SCENE 5 CHOICES END
 
 var A2S5 = new Scene([
 
-new Conv([
-    new Background(getBackgroundURL("cryptAI")),
-    new dialog(NarratorBjorn, "As we entered the room behind the heavy metal door, we both flinched. The room was so brightly lit, even compared to the neon lights in the corridor, that we had both gotten blindsinded for a moment."),
-    new dialog(NarratorBjorn, "Recovering our senses, we realized that the room was quite cold. As if it were a fridge of some sort. What needed such efficient cooling down?"),
-    new dialog(NarratorBjorn, "The floor, the ceiling, the walls-- Everything was made out of a metal that I couldn't really identify. It looked like iron but somewhat different. Although it was difficult to explain, it smelled different-- If I felt Terran in the other rooms, in that room I felt alien."),
-    new dialog(NarratorBjorn, "At the very back of the room was what looked like a bright, round gate. I could hear from it the faint sound of flickering electricity, of a soaring fireplace. But also the sound of swirling waves of water, of cascading landslides."),
-    new dialog(NarratorBjorn, "Shouting at protests, trees falling down. Roaring tornadoes."),
-    new dialog(NarratorBjorn, "Accelerating beeping. Gunshot. The buzz of a taser. Languages I'd never heard."),
-    new dialog(NarratorBjorn, "Although I knew it was only soundwaves, it conjured images in my head that conveyed a very clear message: keep out."),
-    new dialog(NarratorBjorn, "Lussie could hear it too. So we only kept looking at it from a distance."),
-    new dialog(NarratorBjorn, "When all of a sudden, over the noise, all around us-- a voice spoke out from nowhere."),
-    new dialog(Zhuraid, "Welcome, dear guests."),
-    new dialog(Zhuraid, "Welcome to my humble tomb."),
-    new dialog(Lussie, "That cannot be..."),
-    new dialog(Zhuraid, "My name is Zhuraid Uv'air."),
-    new dialog(Bjorn, "... Nice to meet you, Zhuraid. My name is Björn."),
-    new dialog(Lussie, "Ssssss."),
-    new dialog(Bjorn, "Her name is Lussie."),
-    new dialog(Bjorn, "I think we should talk."),
-    new dialog(Zhuraid, "I am all ears, dear guests."),
-    new ChangeConv(1),
-]),
+    new Conv([
+        new Background(getBackgroundURL("cryptAI")),
+        new dialog(NarratorBjorn, "As we entered the room behind the heavy metal door, we both flinched. The room was so brightly lit, even compared to the neon lights in the corridor, that we had both gotten blindsinded for a moment."),
+        new dialog(NarratorBjorn, "Recovering our senses, we realized that the room was quite cold. As if it were a fridge of some sort. What needed such efficient cooling down?"),
+        new dialog(NarratorBjorn, "The floor, the ceiling, the walls-- Everything was made out of a metal that I couldn't really identify. It looked like iron but somewhat different. Although it was difficult to explain, it smelled different-- If I felt Terran in the other rooms, in that room I felt alien."),
+        new dialog(NarratorBjorn, "At the very back of the room was what looked like a bright, round gate. I could hear from it the faint sound of flickering electricity, of a soaring fireplace. But also the sound of swirling waves of water, of cascading landslides."),
+        new dialog(NarratorBjorn, "Shouting at protests, trees falling down. Roaring tornadoes."),
+        new dialog(NarratorBjorn, "Accelerating beeping. Gunshot. The buzz of a taser. Languages I'd never heard."),
+        new dialog(NarratorBjorn, "Although I knew it was only soundwaves, it conjured images in my head that conveyed a very clear message: keep out."),
+        new dialog(NarratorBjorn, "Lussie could hear it too. So we only kept looking at it from a distance."),
+        new dialog(NarratorBjorn, "When all of a sudden, over the noise, all around us-- a voice spoke out from nowhere."),
+        new dialog(Zhuraid, "Welcome, dear guests."),
+        new dialog(Zhuraid, "Welcome to my humble tomb."),
+        new dialog(Lussie, "That cannot be..."),
+        new dialog(Zhuraid, "My name is Zhuraid Uv'air."),
+        new dialog(Bjorn, "... Nice to meet you, Zhuraid. My name is Björn."),
+        new dialog(Lussie, "Ssssss."),
+        new dialog(Bjorn, "Her name is Lussie."),
+        new dialog(Bjorn, "I think we should talk."),
+        new dialog(Zhuraid, "I am all ears, dear guests."),
+        new ChangeConv(1),
+    ]),
 
-new Conv([
-    new Background(getBackgroundURL("cryptAI")),
-    new dialog(NarratorBjorn, "This bright, ominous room was making us feel on edge. Without exchanging a word, we both knew we wanted out as soon as possible."),
-    new dialog(Zhuraid, "What can I help you with?"),
-    new ChoiceArray([A2S511, A2S512, A2S513]),
-]),
+    new Conv([
+        new Background(getBackgroundURL("cryptAI")),
+        new dialog(NarratorBjorn, "This bright, ominous room was making us feel on edge. Without exchanging a word, we both knew we wanted out as soon as possible."),
+        new dialog(Zhuraid, "What can I help you with?"),
+        new ChoiceArray([A2S511, A2S512, A2S513]),
+    ]),
 
-new Conv([
-    new dialog(Zhuraid, "Not losing any time, I see."),
-    new dialog(Bjorn, "We're in quite the rush."),
-    new dialog(Zhuraid, "What is happening to you?"),
-    new dialog(Bjorn, "We are fighting a war. Our enemies are headed this way too."),
-    new dialog(Zhuraid, "So it's over then. My resting place is on the map for good."),
-    new dialog(Bjorn, "Yes."),
-    new dialog(Zhuraid, "My secret will be taken out by force, and I would rather give it out to whoever is fit to keep it safe. But I'm not sure I can trust you. How can you prove me that you are worthy?"),
-    new ChoiceArray([A2S521, A2S522]),
-]),
+    new Conv([
+        new dialog(Zhuraid, "Not losing any time, I see."),
+        new dialog(Bjorn, "We're in quite the rush."),
+        new dialog(Zhuraid, "What is happening to you?"),
+        new dialog(Bjorn, "We are fighting a war. Our enemies are headed this way too."),
+        new dialog(Zhuraid, "So it's over then. My resting place is on the map for good."),
+        new dialog(Bjorn, "Yes."),
+        new dialog(Zhuraid, "My secret will be taken out by force, and I would rather give it out to whoever is fit to keep it safe. But I'm not sure I can trust you. How can you prove me that you are worthy?"),
+        new ChoiceArray([A2S521, A2S522]),
+    ]),
 
-new Conv([
-    new dialog(Zhuraid, "Oh, I am dead. Dead and buried, the old-fashioned way."),
-    new dialog(Lussie, "How is it that you can talk to usss then?"),
-    new dialog(Bjorn, "Wait... Have you..."),
-    new dialog(Bjorn, "Have you transferred your consciousness to this machine?!"),
-    new dialog(Zhuraid, "I beg your pardon?"),
-    new dialog(Zhuraid, "I think you might have read to much science-fiction, dear friend. How would you even do that?"),
-    new dialog(Bjorn, "I was just taking a guess... Sorry."),
-    new dialog(Lussie, "Yeah, Björn, what a sssstupid guesssss."),
-    new dialog(Bjorn, "What? You didn't even guess anything!"),
-    new dialog(Lussie, "Ssssss."),
-    new dialog(Zhuraid, "I am nothing but an artificial intelligence infused with the knowledge of my creator. I am speaking on his behalf as he ordered me to-- but it is the extent of it. I am nothing but a machine."),
-    new dialog(Lussie, "That'ss a bit disappointing, actually."),
-    new dialog(Bjorn, "Are you telling me you expected a... consciousness transfer?"),
-    new dialog(Lussie, "I never sssaid anything of the sort. Ssssss."),
-    new dialog(Bjorn, "Sure!"),
-    new dialog(Zhuraid, "The knowledge did get passed from Zhuraid to me through neuronal cables, though."),
-    new dialog(Bjorn, "There we go!"),
-    new dialog(Lussie, "Exciting!"),
-    new dialog(Bjorn, "Science-fiction IS true to some extent, after all."),
-    new dialog(Zhuraid, "I guess it is sometimes."),
-    new ChangeConv(1),
-]),
+    new Conv([
+        new dialog(Zhuraid, "Oh, I am dead. Dead and buried, the old-fashioned way."),
+        new dialog(Lussie, "How is it that you can talk to usss then?"),
+        new dialog(Bjorn, "Wait... Have you..."),
+        new dialog(Bjorn, "Have you transferred your consciousness to this machine?!"),
+        new dialog(Zhuraid, "I beg your pardon?"),
+        new dialog(Zhuraid, "I think you might have read to much science-fiction, dear friend. How would you even do that?"),
+        new dialog(Bjorn, "I was just taking a guess... Sorry."),
+        new dialog(Lussie, "Yeah, Björn, what a sssstupid guesssss."),
+        new dialog(Bjorn, "What? You didn't even guess anything!"),
+        new dialog(Lussie, "Ssssss."),
+        new dialog(Zhuraid, "I am nothing but an artificial intelligence infused with the knowledge of my creator. I am speaking on his behalf as he ordered me to-- but it is the extent of it. I am nothing but a machine."),
+        new dialog(Lussie, "That'ss a bit disappointing, actually."),
+        new dialog(Bjorn, "Are you telling me you expected a... consciousness transfer?"),
+        new dialog(Lussie, "I never sssaid anything of the sort. Ssssss."),
+        new dialog(Bjorn, "Sure!"),
+        new dialog(Zhuraid, "The knowledge did get passed from Zhuraid to me through neuronal cables, though."),
+        new dialog(Bjorn, "There we go!"),
+        new dialog(Lussie, "Exciting!"),
+        new dialog(Bjorn, "Science-fiction IS true to some extent, after all."),
+        new dialog(Zhuraid, "I guess it is sometimes."),
+        new ChangeConv(1),
+    ]),
 
-new Conv([
-    new dialog(Zhuraid, "Is that what you think?"),
-    new dialog(Bjorn, "I... Yes?"),
-    new dialog(Zhuraid, "I don't think you understand me well enough for me to help you."),
-    new dialog(Bjorn, "Wait!"),
-    new dialog(NarratorBjorn, "No one replied."),
-    new dialog(Lussie, "Ssssss. I think you should go back to gathering info."),
-    new ChangeConv(1),
-]),
+    new Conv([
+        new dialog(Zhuraid, "Is that what you think?"),
+        new dialog(Bjorn, "I... Yes?"),
+        new dialog(Zhuraid, "I don't think you understand me well enough for me to help you."),
+        new dialog(Bjorn, "Wait!"),
+        new dialog(NarratorBjorn, "No one replied."),
+        new dialog(Lussie, "Ssssss. I think you should go back to gathering info."),
+        new ChangeConv(1),
+    ]),
 
-new Conv([
-    new dialog(Zhuraid, "Have you now? Please shed some light for us then. What do you think I valued most in life?"),
-    new ChoiceArray([A2S531, A2S532, A2S533]),
-]),
+    new Conv([
+        new dialog(Zhuraid, "Have you now? Please shed some light for us then. What do you think I valued most in life?"),
+        new ChoiceArray([A2S531, A2S532, A2S533]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "Family was important to you. In your diary, you talked a lot about your daughters and grand-children."),
-    new dialog(Lussie, "You ssssaid that only children could dissssturb your want for peace."),
-    new dialog(Zhuraid, "That is true. Family, and children, are important to me. They teach you compassion and empathy."),
-    new dialog(Bjorn, "Important things to remember when you are designing a weapon."),
-    new dialog(Zhuraid, "Absolutely. Do you know how many grand-children I had?"),
-    new ChoiceArray([A2S541, A2S542, A2S543]),
-]),
+    new Conv([
+        new dialog(Bjorn, "Family was important to you. In your diary, you talked a lot about your daughters and grand-children."),
+        new dialog(Lussie, "You ssssaid that only children could dissssturb your want for peace."),
+        new dialog(Zhuraid, "That is true. Family, and children, are important to me. They teach you compassion and empathy."),
+        new dialog(Bjorn, "Important things to remember when you are designing a weapon."),
+        new dialog(Zhuraid, "Absolutely. Do you know how many grand-children I had?"),
+        new ChoiceArray([A2S541, A2S542, A2S543]),
+    ]),
 
-new Conv([
-    new dialog(Zhuraid, "That's right. Nine grand-children. Who knows how many descendants I have now."),
-    new dialog(NarratorBjorn, "I exchanged a glance with Lussie. No need to tell him-- or it-- that the entire system of Necralis had exploded long ago."),
-    new dialog(Bjorn, "(Let's think... What about us could make him more willing to give us that weapon?)"),
-    new ChoiceArray([A2S551, A2S552, A2S553]),
-]),
+    new Conv([
+        new dialog(Zhuraid, "That's right. Nine grand-children. Who knows how many descendants I have now."),
+        new dialog(NarratorBjorn, "I exchanged a glance with Lussie. No need to tell him-- or it-- that the entire system of Necralis had exploded long ago."),
+        new dialog(Bjorn, "(Let's think... What about us could make him more willing to give us that weapon?)"),
+        new ChoiceArray([A2S551, A2S552, A2S553]),
+    ]),
 
-new Conv([
-    new dialog(Lussie, "The Necralissss sssystem sssseeemed lovely to live in."),
-    new dialog(Zhuraid, "Seemed? It still is today. Isn't it?"),
-    new dialog(Lussie, "... Ssssorry. Yesss, abssolutely."),
-    new dialog(Bjorn, "... Let's talk about something else."),
-    new ChoiceArray([A2S552, A2S553]),
-]),
+    new Conv([
+        new dialog(Lussie, "The Necralissss sssystem sssseeemed lovely to live in."),
+        new dialog(Zhuraid, "Seemed? It still is today. Isn't it?"),
+        new dialog(Lussie, "... Ssssorry. Yesss, abssolutely."),
+        new dialog(Bjorn, "... Let's talk about something else."),
+        new ChoiceArray([A2S552, A2S553]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "Your chapel made a strong impression on us."),
-    new dialog(Zhuraid, "Did it now? I am glad. It is quite striking."),
-    new dialog(Bjorn, "In that, I mean that it is very nostalgic. We come from Terra."),
-    new dialog(Zhuraid, "Terra ! You are Terrans! If I may ask, from which nations do you come from?"),
-    new dialog(Lussie, "Terra is more or lessss united now, although the concept of cultures ssstill existsss... And, after all, we do have a war raging right now-- although it is more about the world versssus the Danish."),
-    new dialog(Bjorn, "With that said, I am Swedish."),
-    new dialog(Lussie, "I am Belgian."),
-    new dialog(Bjorn, "Are you?"),
-    new dialog(Lussie, "Yesss. You didn't know?"),
-    new dialog(Bjorn, "It never came up in conversation I guess."),
-    new dialog(Zhuraid, "Ah... Sweden. It is a country I really enjoy, especially when it comes to its literature."),
-    new dialog(Bjorn, "You did quote something in Swedish in your diary."),
-    new dialog(Zhuraid, "Yes. My source of inspiration for my invention. Surely, if those words rang a bell for you, by now you should now what is the nature of the weapon I guard so closely."),
-    new dialog(Bjorn, "..."),
-    new dialog(Zhuraid, "Now, since we are talking about Terra-- Have you ever been to Paraguay?"),
-    new dialog(Bjorn, "I have to say no, but I happen to have some vague impression of it (... for some reason I ignore)."),
-    new dialog(Zhuraid, "Good. Then, you will surely know what I am talking about. There is one thing I loved about the Paraguayan gastronomy..."),
-    new dialog(Bjorn, "..."),
-    new dialog(Zhuraid, "..."),
-    new dialog(Bjorn, "... (Oh, he wants me to end his sentence)."),
-    new ChoiceArray([A2S561, A2S562]),
-]),
+    new Conv([
+        new dialog(Bjorn, "Your chapel made a strong impression on us."),
+        new dialog(Zhuraid, "Did it now? I am glad. It is quite striking."),
+        new dialog(Bjorn, "In that, I mean that it is very nostalgic. We come from Terra."),
+        new dialog(Zhuraid, "Terra ! You are Terrans! If I may ask, from which nations do you come from?"),
+        new dialog(Lussie, "Terra is more or lessss united now, although the concept of cultures ssstill existsss... And, after all, we do have a war raging right now-- although it is more about the world versssus the Danish."),
+        new dialog(Bjorn, "With that said, I am Swedish."),
+        new dialog(Lussie, "I am Belgian."),
+        new dialog(Bjorn, "Are you?"),
+        new dialog(Lussie, "Yesss. You didn't know?"),
+        new dialog(Bjorn, "It never came up in conversation I guess."),
+        new dialog(Zhuraid, "Ah... Sweden. It is a country I really enjoy, especially when it comes to its literature."),
+        new dialog(Bjorn, "You did quote something in Swedish in your diary."),
+        new dialog(Zhuraid, "Yes. My source of inspiration for my invention. Surely, if those words rang a bell for you, by now you should now what is the nature of the weapon I guard so closely."),
+        new dialog(Bjorn, "..."),
+        new dialog(Zhuraid, "Now, since we are talking about Terra-- Have you ever been to Paraguay?"),
+        new dialog(Bjorn, "I have to say no, but I happen to have some vague impression of it (... for some reason I ignore)."),
+        new dialog(Zhuraid, "Good. Then, you will surely know what I am talking about. There is one thing I loved about the Paraguayan gastronomy..."),
+        new dialog(Bjorn, "..."),
+        new dialog(Zhuraid, "..."),
+        new dialog(Bjorn, "... (Oh, he wants me to end his sentence)."),
+        new ChoiceArray([A2S561, A2S562]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "In your diary, you talked a lot about war."),
-    new dialog(Zhuraid, "Mh... Of all the things I wrote in my diary, it is the only one that you deemed interesting?"),
-    new dialog(Bjorn, "No, it's not what we..."),
-    new dialog(Zhuraid, "I don't wish to discuss war. Maybe your so-called enemies have other uses in mind for my creation."),
-    new dialog(Bjorn, "... Sure."),
-    new ChangeConv(1),
-]),
+    new Conv([
+        new dialog(Bjorn, "In your diary, you talked a lot about war."),
+        new dialog(Zhuraid, "Mh... Of all the things I wrote in my diary, it is the only one that you deemed interesting?"),
+        new dialog(Bjorn, "No, it's not what we..."),
+        new dialog(Zhuraid, "I don't wish to discuss war. Maybe your so-called enemies have other uses in mind for my creation."),
+        new dialog(Bjorn, "... Sure."),
+        new ChangeConv(1),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "The mbeju, isn't it?"),
-    new dialog(Zhuraid, "Ah! A man of taste. Yes. What a delicacy, really-- although I've always disliked teréré, which might be as popular if not more."),
-    new dialog(Zhuraid, "In Paraguay, there was a sense of urgency, of a revolution bound to happen, slowly making its way through the people. I wonder what Paraguay is like now."),
-    new dialog(Lussie, "It'sss powerful, sssir. Their population is full of sssscientists and law expertsss. I would ssssay, everyone knows where Paraguay is on the map right now. They are powerful allies for usss in the war."),
-    new dialog(Zhuraid, "Ah... That is good to know. So they made it."),
-    new dialog(Zhuraid, "I have to admit, I am very saddened by the news of this war. Now, tell me-- you seem like honest people. Time seems to be running out for my invention. If it's not you who fetches it-- if it's not your enemies-- in ten years, twenty years, fifty years, someone will eventually get their hands on it by force."),
-    new dialog(Zhuraid, "I am in truth nothing but the empty shell of Zhuraid, a convoluted algorithm-- a glorified checklist of criterias. So far, I have to say that you seem like worthy candidates."),
-    new dialog(Bjorn, "We are honored."),
-    new dialog(Zhuraid, "If you were to obtain this weapon, what would it be used for?"),
-    new ChoiceArray([A2S571, A2S572, A2S573]),
-]),
+    new Conv([
+        new dialog(Bjorn, "The mbeju, isn't it?"),
+        new dialog(Zhuraid, "Ah! A man of taste. Yes. What a delicacy, really-- although I've always disliked teréré, which might be as popular if not more."),
+        new dialog(Zhuraid, "In Paraguay, there was a sense of urgency, of a revolution bound to happen, slowly making its way through the people. I wonder what Paraguay is like now."),
+        new dialog(Lussie, "It'sss powerful, sssir. Their population is full of sssscientists and law expertsss. I would ssssay, everyone knows where Paraguay is on the map right now. They are powerful allies for usss in the war."),
+        new dialog(Zhuraid, "Ah... That is good to know. So they made it."),
+        new dialog(Zhuraid, "I have to admit, I am very saddened by the news of this war. Now, tell me-- you seem like honest people. Time seems to be running out for my invention. If it's not you who fetches it-- if it's not your enemies-- in ten years, twenty years, fifty years, someone will eventually get their hands on it by force."),
+        new dialog(Zhuraid, "I am in truth nothing but the empty shell of Zhuraid, a convoluted algorithm-- a glorified checklist of criterias. So far, I have to say that you seem like worthy candidates."),
+        new dialog(Bjorn, "We are honored."),
+        new dialog(Zhuraid, "If you were to obtain this weapon, what would it be used for?"),
+        new ChoiceArray([A2S571, A2S572, A2S573]),
+    ]),
 
-new Conv([
-    new dialog(Bjorn, "We want to obtain that weapon not to use it, but to protect it from the Danish, who would surely try to employ it against us."),
-    new dialog(Lussie, "Sssss. Our goal is to put that weapon to safety so that it doesn't give an unfair advantage to our enemy."),
-    new dialog(Zhuraid, "Good. This is my wish too: that this weapon may only be used in case of extreme emergency. It should remain untouched, hidden. out of reach."),
-    new dialog(Bjorn, "Upon reception of the weapon, we would head directly back to our ship, to deliver the weapon to the closest and safest Starbase available, so that it can be protected properly."),
-    new dialog(Zhuraid, "I understand. In a context like this, my protection might not suffice anymore."),
-    new dialog(Zhuraid, "Very well. I think I have heard enough."),
-    new dialog(NarratorBjorn, "Suddenly, the ominous noises stopped. It felt, strangely, as if a heavy weight had been lifted off my shoulders. I hadn't realized the toll they were taking on my mind."),
-    new dialog(Zhuraid, "I will trust you with my weapon. I shall open the gates."),
-    new dialog(NarratorBjorn, "Suddenly, the bright golden gate unlocked in a circular motion, individual panels sliding out of the way one after another. The room got colder as a frozen haze started to seep into it through the door."),
-    new dialog(NarratorBjorn, "When the mist inside of the small storage room had completely disappeared, we were faced with a very small vial."),
-    new dialog(NarratorBjorn, "The small vial contained a transparent liquid, vaguely blue. Lussie gestured towards it, but I grabbed the vial before she did, and studied it for a moment, dumbfounded."),
-    new dialog(Zhuraid, "Do not be fooled by the appearance of the weapon-- It is of the most dangerous nature. May your lips never touch the liquid within."),
-    new dialog(Bjorn, "..."),
-    new dialog(Lussie, "We will take care of it. Thank you for your trusssst."),
-    new dialog(Zhuraid, "It is I who thank you. I am glad to have accomplished my mission."),
-    new dialog(Zhuraid, "I wish you a safe travel back to your ship."),
-    new dialog(Bjorn, "Thank you, Zhuraid."),
-    new dialog(Bjorn, "I think we should get back."),
-    new dialog(Lussie, "Yesss. We have everything we need."),
-    new ChoiceArray([A2S581, A2S582]),
-]),
+    new Conv([
+        new dialog(Bjorn, "We want to obtain that weapon not to use it, but to protect it from the Danish, who would surely try to employ it against us."),
+        new dialog(Lussie, "Sssss. Our goal is to put that weapon to safety so that it doesn't give an unfair advantage to our enemy."),
+        new dialog(Zhuraid, "Good. This is my wish too: that this weapon may only be used in case of extreme emergency. It should remain untouched, hidden. out of reach."),
+        new dialog(Bjorn, "Upon reception of the weapon, we would head directly back to our ship, to deliver the weapon to the closest and safest Starbase available, so that it can be protected properly."),
+        new dialog(Zhuraid, "I understand. In a context like this, my protection might not suffice anymore."),
+        new dialog(Zhuraid, "Very well. I think I have heard enough."),
+        new dialog(NarratorBjorn, "Suddenly, the ominous noises stopped. It felt, strangely, as if a heavy weight had been lifted off my shoulders. I hadn't realized the toll they were taking on my mind."),
+        new dialog(Zhuraid, "I will trust you with my weapon. I shall open the gates."),
+        new dialog(NarratorBjorn, "Suddenly, the bright golden gate unlocked in a circular motion, individual panels sliding out of the way one after another. The room got colder as a frozen haze started to seep into it through the door."),
+        new dialog(NarratorBjorn, "When the mist inside of the small storage room had completely disappeared, we were faced with a very small vial."),
+        new dialog(NarratorBjorn, "The small vial contained a transparent liquid, vaguely blue. Lussie gestured towards it, but I grabbed the vial before she did, and studied it for a moment, dumbfounded."),
+        new dialog(Zhuraid, "Do not be fooled by the appearance of the weapon-- It is of the most dangerous nature. May your lips never touch the liquid within."),
+        new dialog(Bjorn, "..."),
+        new dialog(Lussie, "We will take care of it. Thank you for your trusssst."),
+        new dialog(Zhuraid, "It is I who thank you. I am glad to have accomplished my mission."),
+        new dialog(Zhuraid, "I wish you a safe travel back to your ship."),
+        new dialog(Bjorn, "Thank you, Zhuraid."),
+        new dialog(Bjorn, "I think we should get back."),
+        new dialog(Lussie, "Yesss. We have everything we need."),
+        new ChoiceArray([A2S581, A2S582]),
+    ]),
 ]);
 // SCENE 5 END
 
 //SCENE 4 : CHURCH
 // SCENE 4 CHOICES
-var A2S411 = new Choice(function(){changeConv (2)}, "Let's take a look at the altar.");
-var A2S412 = new Choice(function(){changeConv (5)}, "Pray?");
-var A2S413 = new Choice(function(){changeConv (9)}, "Let's talk to Lussie.");
-var A2S414 = new Choice(function(){changeScene(A2S2, 1)}, "Let's go back to the corridor.");
+var A2S411 = new Choice(function () { changeConv(2) }, "Let's take a look at the altar.");
+var A2S412 = new Choice(function () { changeConv(5) }, "Pray?");
+var A2S413 = new Choice(function () { changeConv(9) }, "Let's talk to Lussie.");
+var A2S414 = new Choice(function () { changeScene(A2S2, 1) }, "Let's go back to the corridor.");
 
-var A2S421 = new Choice(function(){if(checkInventory("BookPASS")){
-    changeConv(12);}
-    else{
-    addToInventory("BookPASS");
-    changeConv(3);
-    }}, "Look at the colourful book.");
-var A2S422 = new Choice(function(){if(checkInventory("DiaryPASS")){
-    changeConv(16);}
-    else{
-    addToInventory("DiaryPASS");
-    changeConv(4);
-    }}, "Look at the diary.");
-var A2S423 = new Choice(function(){changeConv (1)}, "Go back.");
+var A2S421 = new Choice(function () {
+    if (checkInventory("BookPASS")) {
+        changeConv(12);
+    }
+    else {
+        addToInventory("BookPASS");
+        changeConv(3);
+    }
+}, "Look at the colourful book.");
+var A2S422 = new Choice(function () {
+    if (checkInventory("DiaryPASS")) {
+        changeConv(16);
+    }
+    else {
+        addToInventory("DiaryPASS");
+        changeConv(4);
+    }
+}, "Look at the diary.");
+var A2S423 = new Choice(function () { changeConv(1) }, "Go back.");
 
-var A2S431 = new Choice(function(){addToInventory("Love"); changeConv (8)}, "Pray to find love.");
-var A2S432 = new Choice(function(){changeConv (7)}, "Pray empty-minded.");
-var A2S433 = new Choice(function(){changeConv (6)}, "Pray for gurka.");
-var A2S434 = new Choice(function(){changeConv (1)}, "Let's stop.");
+var A2S431 = new Choice(function () { addToInventory("Love"); changeConv(8) }, "Pray to find love.");
+var A2S432 = new Choice(function () { changeConv(7) }, "Pray empty-minded.");
+var A2S433 = new Choice(function () { changeConv(6) }, "Pray for gurka.");
+var A2S434 = new Choice(function () { changeConv(1) }, "Let's stop.");
 
-var A2S441 = new Choice(function(){changeConv (10)}, "What do you think of this place?");
-var A2S442 = new Choice(function(){changeConv (11)}, "What should we do?");
-var A2S443 = new Choice(function(){changeConv (1)}, "Sorry. I forgot.");
-var A2S444 = new Choice(function(){changeConv (1)}, "That's enough. Let's keep going.");
+var A2S441 = new Choice(function () { changeConv(10) }, "What do you think of this place?");
+var A2S442 = new Choice(function () { changeConv(11) }, "What should we do?");
+var A2S443 = new Choice(function () { changeConv(1) }, "Sorry. I forgot.");
+var A2S444 = new Choice(function () { changeConv(1) }, "That's enough. Let's keep going.");
 
-var A2S451 = new Choice(function(){changeConv (13)}, "Los números.");
-var A2S452 = new Choice(function(){changeConv (14)}, "La familia.");
-var A2S453 = new Choice(function(){changeConv (15)}, "Los gustos.");
-var A2S454 = new Choice(function(){changeConv (2)}, "I'm done with the book.");
+var A2S451 = new Choice(function () { changeConv(13) }, "Los números.");
+var A2S452 = new Choice(function () { changeConv(14) }, "La familia.");
+var A2S453 = new Choice(function () { changeConv(15) }, "Los gustos.");
+var A2S454 = new Choice(function () { changeConv(2) }, "I'm done with the book.");
 
-var A2S461 = new Choice(function(){changeConv (17)}, "Read about his work.");
-var A2S462 = new Choice(function(){changeConv (18)}, "Read about his personality.");
-var A2S463 = new Choice(function(){changeConv (19)}, "Read about this place.");
-var A2S464 = new Choice(function(){changeConv (2)}, "Let's go back to the altar.");
+var A2S461 = new Choice(function () { changeConv(17) }, "Read about his work.");
+var A2S462 = new Choice(function () { changeConv(18) }, "Read about his personality.");
+var A2S463 = new Choice(function () { changeConv(19) }, "Read about this place.");
+var A2S464 = new Choice(function () { changeConv(2) }, "Let's go back to the altar.");
 // SCENE 4 CHOICES END
 
 var A2S4 = new Scene([
@@ -957,7 +973,7 @@ var A2S4 = new Scene([
     ]),
 
     new Conv([
-        new dialog(Lussie, "I certainly like the light."), 
+        new dialog(Lussie, "I certainly like the light."),
         new dialog(Bjorn, "You like light a bit more than darkness, huh."),
         new dialog(Lussie, "Darknessss makes me feel sssad."),
         new dialog(Bjorn, "I like obscure places."),
@@ -965,7 +981,7 @@ var A2S4 = new Scene([
         new dialog(Bjorn, "Less tourists."),
         new dialog(Lussie, "Less tourists? What?"),
         new dialog(Bjorn, "Because nobody goes there. They're too obscure."),
-        new dialog(Lussie, "Sssss. I hate you."), 
+        new dialog(Lussie, "Sssss. I hate you."),
         new dialog(Bjorn, "You should try lightening up a bit."),
         new dialog(Lussie, "Let'sss focuss on our tasssk."),
         new ChoiceArray([A2S442, A2S444]),
@@ -974,10 +990,10 @@ var A2S4 = new Scene([
     new Conv([
         new dialog(Lussie, "I wonder... We should explore everything we can."),
         new dialog(Bjorn, "The door at the very end of the corridor is intriguing, but it seems locked. Probably impossible to force our way in."),
-        new dialog(Lussie, "And I do feel like we need more context to underssstand what is going on here."), 
+        new dialog(Lussie, "And I do feel like we need more context to underssstand what is going on here."),
         new dialog(Lussie, "Whatever it is that we will find, I feel like this guy was a sssscholar of sssome sssort. Probably a big talker."),
         new dialog(Bjorn, "Yes. It might be hard to retain all the information that we'll get."),
-        new dialog(Lussie, "We should take notesss ssssomewhere of the ssstuff we find relevant."), 
+        new dialog(Lussie, "We should take notesss ssssomewhere of the ssstuff we find relevant."),
         new dialog(Bjorn, "Good idea."),
         new dialog(Lussie, "I am under the impressssion that thisss place was meant to be found."),
         new dialog(Bjorn, "Yes. It is a bit too well-running and welcoming for it to be meant to be forgotten about."),
@@ -994,20 +1010,20 @@ var A2S4 = new Scene([
         new dialog(Narrator, "Desde 1 hasta 10: UNO, DOS, TRES, CUATRO, CINCO, SEIS, SIETE, OCHO, NUEVE, DIEZ."),
         new dialog(Narrator, "Desde 10 hasta 100: DIEZ, VEINTE, TREINTA, CUARENTA, CINCUENTA, SECENTA, SETENTA, OCHENTA, NOVENTA, CIEN."),
         new dialog(Bjorn, "Muy bien."),
-        new ChoiceArray([A2S452, A2S453, A2S454]),  
+        new ChoiceArray([A2S452, A2S453, A2S454]),
     ]),
 
     new Conv([
         new dialog(Narrator, "LOS PADRES -- La madre (mama), El padre (papa). LOS NIÑOS -- Los PADRES tienen HIJOS -- La hija, el hijo."),
         new dialog(Narrator, "EJEMPLO: La MADRE Maria y el PADRE Mario tienen dos HIJOS, Paola y Pablo. Paola es la HERMANA de Pablo. Pablo es el HERMANO de Paola. Paola es la HIJA de Maria y Mario. Paolo es el HIJO de Maria y Mario."),
         new dialog(Narrator, "El HIJO Pablo tiene una HIJA, Vanesa. Vanesa es la HIJA de Pablo. Maria es la MADRE de Pablo y la ABUELA de Vanesa. Mario es el PADRE de Pablo y el ABUELO de Vanesa. Vanesa es la NIETA de Maria y Mario."),
-        new ChoiceArray([A2S451, A2S453, A2S454]),  
+        new ChoiceArray([A2S451, A2S453, A2S454]),
     ]),
 
     new Conv([
         new dialog(Narrator, "EL CHOCOLATE -- + : ME GUSTA el chocolate. ++ : ME ENCANTA el chocolate."),
         new dialog(Narrator, "- : NO ME GUSTA el chocolate. -- : ODIO al (A + EL) chocolate."),
-        new ChoiceArray([A2S451, A2S452, A2S454]),  
+        new ChoiceArray([A2S451, A2S452, A2S454]),
     ]),
 
     new Conv([
@@ -1044,7 +1060,7 @@ var A2S4 = new Scene([
         new dialog(Bjorn, "Let's read another page..."),
         new dialog(Narrator, "When I visited Terra, I brought with me much knowledge and many artifacts. I have visited many places there. It is a world lush with life, much more passionate than our system of Necralis. Injustice brings fire to the heart of Terrans, and that fire is inextinguishable."),
         new dialog(Narrator, "Terra being a planet that has no relationship to the others in its system, it still functions according to a system of nations and borders. The Terran country closest to my heart is the little country of Paraguay."),
-        new dialog(Narrator, "Such a vibrant little country it was. Its vegetation is of a green I've never seen in my life, and its people are by far the kindest I have encountered, yet also the most passionate."), 
+        new dialog(Narrator, "Such a vibrant little country it was. Its vegetation is of a green I've never seen in my life, and its people are by far the kindest I have encountered, yet also the most passionate."),
         new dialog(Bjorn, "Funny."),
         new dialog(Lussie, "What is?"),
         new dialog(Bjorn, "I've never been to Paraguay, yet this description sounds very familiar to me."),
@@ -1087,62 +1103,64 @@ var A2S4 = new Scene([
 
 //SCENE 3 : TOMB
 // SCENE 3 CHOICES
-var A2S311 = new Choice(function(){changeConv (2)}, "Let's talk to Lussie.");
-var A2S312 = new Choice(function(){if(checkInventory("ScripturePASS")){
-    changeConv(6);}
-    else{
-    addToInventory("ScripturePASS");
-    changeConv(5);
+var A2S311 = new Choice(function () { changeConv(2) }, "Let's talk to Lussie.");
+var A2S312 = new Choice(function () {
+    if (checkInventory("ScripturePASS")) {
+        changeConv(6);
+    }
+    else {
+        addToInventory("ScripturePASS");
+        changeConv(5);
     }
 }, "Let's take a look at the stone wall.");
-var A2S313 = new Choice(function(){changeScene(A2S2, 1)}, "Let's go back to the corridor.");
+var A2S313 = new Choice(function () { changeScene(A2S2, 1) }, "Let's go back to the corridor.");
 
-var A2S321 = new Choice(function(){changeConv (3)}, "What do you think of this place?");
-var A2S322 = new Choice(function(){changeConv (4)}, "Anyone in your family you miss?");
-var A2S323 = new Choice(function(){changeConv (1)}, "Nevermind.");
+var A2S321 = new Choice(function () { changeConv(3) }, "What do you think of this place?");
+var A2S322 = new Choice(function () { changeConv(4) }, "Anyone in your family you miss?");
+var A2S323 = new Choice(function () { changeConv(1) }, "Nevermind.");
 // SCENE 3 CHOICES END
 
 var A2S3 = new Scene([
     new Conv([
         new Background(getBackgroundURL("Cryptcross")),
         new dialog(NarratorBjorn, "We moved through the dark passage. Before long, we emerged in a very singular room. It was of medium size and covered in exotic plants. They looked Terran, something you could find in the southern hemisphere of the planet. In front of a carved rock stood a bright red neon-lit cross. "),
-new dialog(Bjorn, "That's strange, isn't it?"),
-new dialog(Lussie, "What is?"),
-new dialog(Bjorn, "... Nothing."),
-new dialog(NarratorBjorn, "As far as I knew, only Terrans have crosses as religious imagery. What could it mean?"),
-        new ChangeConv (1),
+        new dialog(Bjorn, "That's strange, isn't it?"),
+        new dialog(Lussie, "What is?"),
+        new dialog(Bjorn, "... Nothing."),
+        new dialog(NarratorBjorn, "As far as I knew, only Terrans have crosses as religious imagery. What could it mean?"),
+        new ChangeConv(1),
     ]),
 
     new Conv([
         new Background(getBackgroundURL("Cryptcross")),
         new dialog(NarratorBjorn, "The room was dark, except for the cross glowing in its center. It stood above slightly humid soil. It looked like something was written in the stone wall behind it."),
-new dialog(Lussie, "It'sss pretty gloomy. I'd like it if we didn't sssstay too long. Why didn't you go to the bright room insssstead?"),
-new dialog(Bjorn, "You do realize exploring every room is part of our mission, right?"),
-        new ChoiceArray ([A2S311, A2S312, A2S313]),
+        new dialog(Lussie, "It'sss pretty gloomy. I'd like it if we didn't sssstay too long. Why didn't you go to the bright room insssstead?"),
+        new dialog(Bjorn, "You do realize exploring every room is part of our mission, right?"),
+        new ChoiceArray([A2S311, A2S312, A2S313]),
     ]),
 
-    new Conv([     
-new dialog(Lussie, "You had ssssomething to assk me?"),
-        new ChoiceArray ([A2S321, A2S322, A2S323]),
+    new Conv([
+        new dialog(Lussie, "You had ssssomething to assk me?"),
+        new ChoiceArray([A2S321, A2S322, A2S323]),
     ]),
 
-new Conv([     
-    new dialog(Lussie, "It remindsss me of a party I went to."),
-new dialog(Bjorn, "A party? What?"),
-new dialog(Lussie, "It was before I went to Ssssspace sschool, we had a big party."),
-new dialog(Lussie, "It was in ssssome kind of fortressssss from ancient timess. On Terra. We could sseeeee the ssskyyy-- that is, until we lit up the neon lightsss."),
-new dialog(Bjorn, "Mmh."),
-new dialog(Lussie, "The neon lightsss looked jussst like the crosss."),
-new dialog(Bjorn, "I see."),
-new dialog(Lussie, "But it wass lesssss gloomy. Thiss place is very gloomy."),
-new dialog(Bjorn, "I like the plants."),
-new dialog(Lussie, "I don't know."),
-new dialog(Lussie, "Besssides, I don't know if you took a look yet at the engravingss. But I don't even underssstand what they sssay. Completely uselesss."),
-new dialog(Bjorn, "Not the biggest fan of this place then, I take it."),
-new ChangeConv(2),
-        ]),
-        
-    new Conv([     
+    new Conv([
+        new dialog(Lussie, "It remindsss me of a party I went to."),
+        new dialog(Bjorn, "A party? What?"),
+        new dialog(Lussie, "It was before I went to Ssssspace sschool, we had a big party."),
+        new dialog(Lussie, "It was in ssssome kind of fortressssss from ancient timess. On Terra. We could sseeeee the ssskyyy-- that is, until we lit up the neon lightsss."),
+        new dialog(Bjorn, "Mmh."),
+        new dialog(Lussie, "The neon lightsss looked jussst like the crosss."),
+        new dialog(Bjorn, "I see."),
+        new dialog(Lussie, "But it wass lesssss gloomy. Thiss place is very gloomy."),
+        new dialog(Bjorn, "I like the plants."),
+        new dialog(Lussie, "I don't know."),
+        new dialog(Lussie, "Besssides, I don't know if you took a look yet at the engravingss. But I don't even underssstand what they sssay. Completely uselesss."),
+        new dialog(Bjorn, "Not the biggest fan of this place then, I take it."),
+        new ChangeConv(2),
+    ]),
+
+    new Conv([
         new dialog(Lussie, "That'sss a depresssing thing to asssk in front of a tomb."),
         new dialog(Bjorn, "Hmm... yes, sorry."),
         new dialog(Lussie, "I misssss my dog."),
@@ -1154,8 +1172,8 @@ new ChangeConv(2),
         new dialog(Lussie, "My dog iss happier in a garden than on a ssspaceship, I would sssay."),
         new dialog(Bjorn, "Fair enough."),
         new dialog(NarratorBjorn, "For once, silence wasn't interrupted right away when it fell again between us. We could only hear the light flickering of the cross's neon lights. Although Lussie was obnoxious at times, I felt a little bit closer to her."),
-new ChangeConv(2),
-        ]),
+        new ChangeConv(2),
+    ]),
 
 
     new Conv([
@@ -1188,42 +1206,50 @@ new ChangeConv(2),
 
 //SCENE 2 : CORRIDOR
 // SCENE 2 CHOICES
-var A2S211 = new Choice(function(){changeScene(A2S1, 1)}, "Let's go back to the entrance.");
-var A2S212 = new Choice(function(){if(checkInventory("TombPASS")){
-    changeScene(A2S3, 1);}
-    else{
-    addToInventory("TombPASS");
-    changeScene(A2S3, 0);
+var A2S211 = new Choice(function () { changeScene(A2S1, 1) }, "Let's go back to the entrance.");
+var A2S212 = new Choice(function () {
+    if (checkInventory("TombPASS")) {
+        changeScene(A2S3, 1);
+    }
+    else {
+        addToInventory("TombPASS");
+        changeScene(A2S3, 0);
     }
 }, "Let's go to the dark room.");
-var A2S213 = new Choice(function(){if(checkInventory("ChurchPASS")){
-    changeScene(A2S4, 1);}
-    else{
-    addToInventory("ChurchPASS");
-    changeScene(A2S4, 0);
+var A2S213 = new Choice(function () {
+    if (checkInventory("ChurchPASS")) {
+        changeScene(A2S4, 1);
+    }
+    else {
+        addToInventory("ChurchPASS");
+        changeScene(A2S4, 0);
     }
 }, "Let's go to the bright room.");
-var A2S214 = new Choice(function(){if(checkInventory("MetalDoorPASS")){
-    changeConv(3);}
-    else{
-    addToInventory("MetalDoorPASS");
-    changeConv(2);
+var A2S214 = new Choice(function () {
+    if (checkInventory("MetalDoorPASS")) {
+        changeConv(3);
+    }
+    else {
+        addToInventory("MetalDoorPASS");
+        changeConv(2);
     }
 }, "Let's go towards that heavy metal door.");
 
-var A2S221 = new Choice(function(){changeConv(4)}, "Turn left.");
-var A2S222 = new Choice(function(){changeConv(4)}, "Turn right.");
-var A2S223 = new Choice(function(){changeConv(1)}, "Go back.");
-var A2S231 = new Choice(function(){changeConv(5)}, "Turn left.");
-var A2S241 = new Choice(function(){changeConv(6)}, "Turn right.");
-var A2S251 = new Choice(function(){changeConv(7)}, "Turn right.");
-var A2S261 = new Choice(function(){changeConv(8)}, "Turn left.");
+var A2S221 = new Choice(function () { changeConv(4) }, "Turn left.");
+var A2S222 = new Choice(function () { changeConv(4) }, "Turn right.");
+var A2S223 = new Choice(function () { changeConv(1) }, "Go back.");
+var A2S231 = new Choice(function () { changeConv(5) }, "Turn left.");
+var A2S241 = new Choice(function () { changeConv(6) }, "Turn right.");
+var A2S251 = new Choice(function () { changeConv(7) }, "Turn right.");
+var A2S261 = new Choice(function () { changeConv(8) }, "Turn left.");
 
-var A2S271 = new Choice(function(){if(checkInventory("AIPASS")){
-    changeScene(A2S5, 1)}
-    else{
-    addToInventory("AIPASS");
-    changeScene(A2S5, 0);
+var A2S271 = new Choice(function () {
+    if (checkInventory("AIPASS")) {
+        changeScene(A2S5, 1)
+    }
+    else {
+        addToInventory("AIPASS");
+        changeScene(A2S5, 0);
     }
 }, "Go in.");
 // SCENE 2 CHOICES END
@@ -1234,14 +1260,14 @@ var A2S2 = new Scene([
         new dialog(NarratorBjorn, "After some time walking in complete darkness, rays of pink light started to peek through. Following the light, we soon arrived in a very intensely lit corridor, bright pink neon lights covering the walls and ceiling. The place looked quite futuristic and was a bit agressive on the eye."),
         new dialog(Lussie, "Ouch... That'ssss quite the lightsss. I feel like I've jussst woken up in the middle of the afternoon."),
         new dialog(Bjorn, "We do agree, for once."),
-        new ChangeConv (1),
+        new ChangeConv(1),
     ]),
 
     new Conv([
         new Background(getBackgroundURL("Cryptcorridor")),
         new dialog(NarratorBjorn, "The complete symmetry of the room was quite confusing. However, that much was certain: there was a passage on the left that was as dark as the tunnel we came from, and another one on the right that seemed better lit. At the very end of the corridor stood a heavy metal door."),
-new dialog(Lussie, "Now... Where should we go?"),
-new ChoiceArray ([A2S211, A2S212, A2S213, A2S214]),
+        new dialog(Lussie, "Now... Where should we go?"),
+        new ChoiceArray([A2S211, A2S212, A2S213, A2S214]),
     ]),
 
     new Conv([
@@ -1252,75 +1278,77 @@ new ChoiceArray ([A2S211, A2S212, A2S213, A2S214]),
         new dialog(Lussie, "Is thisss a code?"),
         new dialog(Bjorn, "Maybe."),
         new dialog(NarratorBjorn, "In any case, maybe it was worth giving a shot? Although, without the right combination, it could be a complete loss of time."),
-new ChoiceArray ([A2S221, A2S222, A2S223]),
+        new ChoiceArray([A2S221, A2S222, A2S223]),
     ]),
 
     new Conv([
         new dialog(NarratorBjorn, "We walked back to the metal door. It was still closed shut."),
-new dialog(Lussie, "Let'ssss try to open that door again."),
-new ChoiceArray ([A2S221, A2S222, A2S223]),
+        new dialog(Lussie, "Let'ssss try to open that door again."),
+        new ChoiceArray([A2S221, A2S222, A2S223]),
     ]),
 
     new Conv([
         new dialog(Bjorn, "And now..."),
-new ChoiceArray ([A2S231, A2S222, A2S223]),
+        new ChoiceArray([A2S231, A2S222, A2S223]),
     ]),
 
     new Conv([
         new dialog(Bjorn, "And now..."),
-new ChoiceArray ([A2S221, A2S241, A2S223]),
+        new ChoiceArray([A2S221, A2S241, A2S223]),
     ]),
 
     new Conv([
         new dialog(Bjorn, "And now..."),
-new ChoiceArray ([A2S221, A2S251, A2S223]),
+        new ChoiceArray([A2S221, A2S251, A2S223]),
     ]),
 
     new Conv([
         new dialog(Bjorn, "And now..."),
-new ChoiceArray ([A2S261, A2S222, A2S223]),
+        new ChoiceArray([A2S261, A2S222, A2S223]),
     ]),
 
     new Conv([
         new dialog(Bjorn, "Ah! I heard a click!"),
-new dialog(Lussie, "What? Really?"),
-new dialog(Bjorn, "Yes! I think the door is open now."),
-new ChoiceArray ([A2S271, A2S223]),
+        new dialog(Lussie, "What? Really?"),
+        new dialog(Bjorn, "Yes! I think the door is open now."),
+        new ChoiceArray([A2S271, A2S223]),
     ])
-
-
 ]);
 // SCENE 2 END
 
 //SCENE 1 : ENTRANCE
 //SCENE 1 CHOICES
-var A2S111 = new Choice(function(){changeConv(2)}, "I want to talk to you.");
-var A2S112 = new Choice(function(){changeConv(9)}, "Let's contact the captain.");
-var A2S113 = new Choice(function(){if(checkInventory("CorridorPASS")){
-    changeScene(A2S2, 1)}
-    else{
-    addToInventory("CorridorPASS");
-    changeScene(A2S2, 0);
+var A2S111 = new Choice(function () { changeConv(2) }, "I want to talk to you.");
+var A2S112 = new Choice(function () { changeConv(9) }, "Let's contact the captain.");
+var A2S113 = new Choice(function () {
+    if (checkInventory("CorridorPASS")) {
+        changeScene(A2S2, 1)
+    }
+    else {
+        addToInventory("CorridorPASS");
+        changeScene(A2S2, 0);
     }
 }, "Let's go forward.");
 
-var A2S121 = new Choice(function(){changeConv(3)}, "What led you to work for the 3MP4-NADA?");
-var A2S122 = new Choice(function(){changeConv(4)}, "What do you think about the new recruits?");
-var A2S123 = new Choice(function(){changeConv(1)}, "Actually, nothing. Let's go.");
+var A2S121 = new Choice(function () { changeConv(3) }, "What led you to work for the 3MP4-NADA?");
+var A2S122 = new Choice(function () { changeConv(4) }, "What do you think about the new recruits?");
+var A2S123 = new Choice(function () { changeConv(1) }, "Actually, nothing. Let's go.");
 
-var A2S131 = new Choice(function(){changeConv(5)}, "She's kind of cute.");
-var A2S132 = new Choice(function(){changeConv(6)}, "I'd need to talk to her more.");
-var A2S133 = new Choice(function(){changeConv(7)}, "Don't think I'll like her too much.");
+var A2S131 = new Choice(function () { changeConv(5) }, "She's kind of cute.");
+var A2S132 = new Choice(function () { changeConv(6) }, "I'd need to talk to her more.");
+var A2S133 = new Choice(function () { changeConv(7) }, "Don't think I'll like her too much.");
 
-var A2S141 = new Choice(function(){if(checkInventory("serum")){
-    changeConv(10);}
-    else{
-    changeConv(11);
+var A2S141 = new Choice(function () {
+    if (checkInventory("serum")) {
+        changeConv(10);
+    }
+    else {
+        changeConv(11);
     }
 }, "We got the weapon. We'll head back to the ship.");
-var A2S142 = new Choice(function(){changeConv(12)}, "I think the new anthropologist would like to see this.");
-var A2S143 = new Choice(function(){changeConv(13)}, "I'll hang up.");
-var Letsgo2 = new Choice(function(){changeScene(A3S1, 0)}, "Let's go!");
+var A2S142 = new Choice(function () { changeConv(12) }, "I think the new anthropologist would like to see this.");
+var A2S143 = new Choice(function () { changeConv(13) }, "I'll hang up.");
+var Letsgo2 = new Choice(function () { changeScene(A3S1, 0) }, "Let's go!");
 //SCENE 1 CHOICES END 
 
 var A2S1 = new Scene([
@@ -1332,7 +1360,7 @@ var A2S1 = new Scene([
         new dialog(NarratorBjorn, "After a silent, uneventful trip, Lussie and I both reached the floating crypt. From the outside, it looked like an antique church in the style of 19th century Western Europe. It seemed like a very unefficient way to design a building, but, yes, it was beautiful."),
         new dialog(NarratorBjorn, "We entered the crypt to be welcomed by a dark, more contemporary, neon-lit corridor. Everything was silent. It was making me feel a bit uncomfortable, but I could appreciate the quiet. Living in a spaceship comes with a constant background humming, the existence of which you tend to forget until it is finally not there anymore."),
         new dialog(Lussie, "Ssssssso... Thisss is the crypt."),
-        new dialog(NarratorBjornLussie, "I couldn't help but sigh. Silence ruined. Some people seem to dislike shared stillness."), 
+        new dialog(NarratorBjornLussie, "I couldn't help but sigh. Silence ruined. Some people seem to dislike shared stillness."),
         new dialog(Lussie, "Did you jusssst ssssigh, Björn?"),
         new dialog(Bjorn, "Yes. And yes, this is the crypt. Should we contact the Captain to tell him we've entered?"),
         new dialog(Lussie, "That'ss a good idea. Let'ss call him."),
@@ -1345,7 +1373,7 @@ var A2S1 = new Scene([
         new dialog(Bjorn, "Understood. We'll report back when we have the weapon. If we run into any problems we will also report back to you."),
         new dialog(Lussie, "How did you underssstand him?"),
         new dialog(Bjorn, "It was not so hard Lusssssie-- uhm, Lussie."),
-        new dialog(Beret, "Perfect. G-- luck!"),        
+        new dialog(Beret, "Perfect. G-- luck!"),
     ]),
 
     new Conv([
@@ -1360,126 +1388,126 @@ var A2S1 = new Scene([
         new ChoiceArray([A2S121, A2S122, A2S123]),
     ]),
 
-new Conv([
-    new dialog(Lussie, "Well, I graduated on top of my classss when I ssstudied intergalactic relations."),
-new dialog(Bjorn, "I see."),
-new dialog(Lussie, "..."),
-new dialog(Bjorn, "..."),
-new dialog(Lussie, "... Sssso I applied directly for the 3MP4-NADA because it does have a very ssssolid reputation and..."),
-new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
-new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
-new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
-new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
-new dialog(Lussie, "Then, Captain Beret contacted me, and--"),
-new dialog(Bjorn, "Sorry for interrupting you but I think we should end this mono... this conversation. (I'm afraid the Danish will find us before you're over with your story and I really can't take it anymore.)"),
-new dialog(Lussie, "Ssssssss... Fine."),
-new ChangeConv (2),
-]),
+    new Conv([
+        new dialog(Lussie, "Well, I graduated on top of my classss when I ssstudied intergalactic relations."),
+        new dialog(Bjorn, "I see."),
+        new dialog(Lussie, "..."),
+        new dialog(Bjorn, "..."),
+        new dialog(Lussie, "... Sssso I applied directly for the 3MP4-NADA because it does have a very ssssolid reputation and..."),
+        new dialog(Lussie, ".................... .......................... .......................... .......................... .......................... .................... .......................... .......................... .......................... .......................... "),
+        new dialog(Lussie, "................................ .......................... .......................... .......................... .......................... .................... .......................... .......................... .......................... .......................... "),
+        new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... .................... .......................... .......................... .......................... .......................... "),
+        new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... .................... .......................... .......................... .......................... .......................... "),
+        new dialog(Lussie, "Then, Captain Beret contacted me, and--"),
+        new dialog(Bjorn, "Sorry for interrupting you but I think we should end this mono... this conversation. (I'm afraid the Danish will find us before you're over with your story and I really can't take it anymore.)"),
+        new dialog(Lussie, "Ssssssss... Fine."),
+        new ChangeConv(2),
+    ]),
 
-new Conv([
-    new dialog(Lussie, "Have you talked to all of them yet?"),
-new dialog(Bjorn, "No. I only met the new anthropologist. What was her name again?"),
-new dialog(Lussie, "Thaléa."),
-new dialog(Bjorn, "Right."),
-new dialog(Lussie, "She keepsss interrupting people when they ssspeak."),
-new dialog(Bjorn, "Yes, I noticed."),
-new dialog(Lussie, "What do you think about her?"),
-new ChoiceArray ([A2S131, A2S132, A2S133]),
-]),
+    new Conv([
+        new dialog(Lussie, "Have you talked to all of them yet?"),
+        new dialog(Bjorn, "No. I only met the new anthropologist. What was her name again?"),
+        new dialog(Lussie, "Thaléa."),
+        new dialog(Bjorn, "Right."),
+        new dialog(Lussie, "She keepsss interrupting people when they ssspeak."),
+        new dialog(Bjorn, "Yes, I noticed."),
+        new dialog(Lussie, "What do you think about her?"),
+        new ChoiceArray([A2S131, A2S132, A2S133]),
+    ]),
 
-new Conv ([
-    new dialog(Lussie, "Sssssss... I ssssee. You like her then?"),
-new dialog(Bjorn, "I'm just saying she looks cute."),
-new dialog(Lussie, "Interessssting. That will make good gosssssip."),
-new dialog(Bjorn, "Please don't gossip about me. Or do, whatever. Anyway..."),
-new ChangeConv (8),
-]),
+    new Conv([
+        new dialog(Lussie, "Sssssss... I ssssee. You like her then?"),
+        new dialog(Bjorn, "I'm just saying she looks cute."),
+        new dialog(Lussie, "Interessssting. That will make good gosssssip."),
+        new dialog(Bjorn, "Please don't gossip about me. Or do, whatever. Anyway..."),
+        new ChangeConv(8),
+    ]),
 
-new Conv ([
-    new dialog(Lussie, "Ssssometimes you can feel if you're going to get along with ssssomeone the minute you ssssee them for the firssst time."),
-new dialog(Bjorn, "I still think it's better to wait some time before forming a definitive opinion."),
-new dialog(Bjorn, "(Well. I did think she was cute, but.)"),
-new dialog(Lussie, "Well, my insssstinct never failed me, at leasssst. Ssssee, we're a pretty good team, aren't we? I knew we would be."),
-new dialog(Bjorn, "... Yes."),
-new ChangeConv (8),
-]),
+    new Conv([
+        new dialog(Lussie, "Ssssometimes you can feel if you're going to get along with ssssomeone the minute you ssssee them for the firssst time."),
+        new dialog(Bjorn, "I still think it's better to wait some time before forming a definitive opinion."),
+        new dialog(Bjorn, "(Well. I did think she was cute, but.)"),
+        new dialog(Lussie, "Well, my insssstinct never failed me, at leasssst. Ssssee, we're a pretty good team, aren't we? I knew we would be."),
+        new dialog(Bjorn, "... Yes."),
+        new ChangeConv(8),
+    ]),
 
-new Conv ([
-    new dialog(Narrator, "As Björn was trying to express the reasons why he didn't like Thaléa very much, he mysteriously couldn't find any. Why, she was, after all, so likeable."),
-new dialog(Bjorn, "You know what, I think she's kind of cute."),
-new ChangeConv (5),
-]),
+    new Conv([
+        new dialog(Narrator, "As Björn was trying to express the reasons why he didn't like Thaléa very much, he mysteriously couldn't find any. Why, she was, after all, so likeable."),
+        new dialog(Bjorn, "You know what, I think she's kind of cute."),
+        new ChangeConv(5),
+    ]),
 
-new Conv([
-    new dialog(Lussie, "Have you met Rasssmuss?"),
-    new dialog(Bjorn, "Rasmus? Who's Rasmus?"),
-    new dialog(Lussie, "He's the new guy in charge of our shipmentssss."),
-    new dialog(Bjorn, "Why did the former one get replaced?"),
-    new dialog(Lussie, "He was ssssstealing gurka from the packagessss we were getting from Terra and the coloniesss."),
-    new dialog(Bjorn, "What! You CANNOT be serious."),
-    new dialog(Lussie, "What, what? Ssssss, Björn, I have never sssseen you sssso shocked. You look like you've ssssseeen a ghossst."),
-    new dialog(Bjorn, "He's the reason why gurka prices have been raising so much lately?!"),
-    new dialog(Lussie, "I didn't even notice. Were they? How-- how much gurka do you eat to notice sssssuch thingsss?"),
-    new dialog(Bjorn, "That is not of your concern."),
-    new dialog(Lussie, "Ssssss. Fine. Yesss, I asssssume thisss was the reassson why pricess were climbing. But Rasssmuss is here now, and he sssseems sssweeet as pie. Sssso cute."),
-    new dialog(Bjorn, "... Cute? (What a strange way to spontaneously talk about a new colleague. How cute can he be?)"),
-    new ChangeConv (2),
-]),
+    new Conv([
+        new dialog(Lussie, "Have you met Rasssmuss?"),
+        new dialog(Bjorn, "Rasmus? Who's Rasmus?"),
+        new dialog(Lussie, "He's the new guy in charge of our shipmentssss."),
+        new dialog(Bjorn, "Why did the former one get replaced?"),
+        new dialog(Lussie, "He was ssssstealing gurka from the packagessss we were getting from Terra and the coloniesss."),
+        new dialog(Bjorn, "What! You CANNOT be serious."),
+        new dialog(Lussie, "What, what? Ssssss, Björn, I have never sssseen you sssso shocked. You look like you've ssssseeen a ghossst."),
+        new dialog(Bjorn, "He's the reason why gurka prices have been raising so much lately?!"),
+        new dialog(Lussie, "I didn't even notice. Were they? How-- how much gurka do you eat to notice sssssuch thingsss?"),
+        new dialog(Bjorn, "That is not of your concern."),
+        new dialog(Lussie, "Ssssss. Fine. Yesss, I asssssume thisss was the reassson why pricess were climbing. But Rasssmuss is here now, and he sssseems sssweeet as pie. Sssso cute."),
+        new dialog(Bjorn, "... Cute? (What a strange way to spontaneously talk about a new colleague. How cute can he be?)"),
+        new ChangeConv(2),
+    ]),
 
-new Conv([
-    new dialog(Lussie, "Let'sss try thisss again."),
-    new dialog(NarratorBjorn, "We could hear our receivers beep as they were trying to connect with the 3MP4-NADA's network. After a while, the holographic retransmission of our Captain's face appeared on the screen."),
-    new dialog(Beret, "Good to see y-- do for you?"),
-    new ChoiceArray([A2S141, A2S142, A2S143]),
-]),
+    new Conv([
+        new dialog(Lussie, "Let'sss try thisss again."),
+        new dialog(NarratorBjorn, "We could hear our receivers beep as they were trying to connect with the 3MP4-NADA's network. After a while, the holographic retransmission of our Captain's face appeared on the screen."),
+        new dialog(Beret, "Good to see y-- do for you?"),
+        new ChoiceArray([A2S141, A2S142, A2S143]),
+    ]),
 
-new Conv([
-    new dialog(Beret, "Show it-- me."),
-new dialog(NarratorBjorn, "I took the small vial out of my pocket and showed it to the Captain through the screen. He looked puzzled."),
-new dialog(Beret, "What-- this? -- the weapon?"),
-new dialog(Bjorn, "Yes. We don't know what it is, either: but it definitely is the weapon. It was well protected after all, albeit in a very unusual way."),
-new dialog(Lussie, "We ssssearched everything."),
-new dialog(Beret, "I see. Well-- back aboard. It--- easier to talk--"),
-new dialog(Lussie, "Terrible. My earssss are bleeding."),
-new dialog(Bjorn, "What ears? I don't see any ears."),
-new dialog(Lussie, "......."),
-new dialog(Bjorn, "Roger that, Captain Béret. Back to the ship!"),
-new ChoiceArray([Letsgo2]),
-]),
+    new Conv([
+        new dialog(Beret, "Show it-- me."),
+        new dialog(NarratorBjorn, "I took the small vial out of my pocket and showed it to the Captain through the screen. He looked puzzled."),
+        new dialog(Beret, "What-- this? -- the weapon?"),
+        new dialog(Bjorn, "Yes. We don't know what it is, either: but it definitely is the weapon. It was well protected after all, albeit in a very unusual way."),
+        new dialog(Lussie, "We ssssearched everything."),
+        new dialog(Beret, "I see. Well-- back aboard. It--- easier to talk--"),
+        new dialog(Lussie, "Terrible. My earssss are bleeding."),
+        new dialog(Bjorn, "What ears? I don't see any ears."),
+        new dialog(Lussie, "......."),
+        new dialog(Bjorn, "Roger that, Captain Béret. Back to the ship!"),
+        new ChoiceArray([Letsgo2]),
+    ]),
 
-new Conv ([
-    new dialog(Beret, "Show it-- me."),
-    new dialog(Bjorn, "What about a wee pun instead?"),
-    new dialog(Lussie, "A... what?"),
-    new dialog(Bjorn, "Get it?"),
-    new dialog(Beret, "......."),
-    new dialog(Bjorn, "Get it?"),
-    new dialog(Lussie, "Honesssstly, no."),
-    new dialog(Beret, "Don't sta-- him-- it---"),
-    new dialog(Bjorn, "Weapon... Wee pun..."),
-    new dialog(Beret, "Get that wee pun-- wee-- WEAPON and st-- with the puns. Over."),
-    new dialog(Lussie, "Sssssss. Dear god."),
-    new ChangeConv (9),
-]),
+    new Conv([
+        new dialog(Beret, "Show it-- me."),
+        new dialog(Bjorn, "What about a wee pun instead?"),
+        new dialog(Lussie, "A... what?"),
+        new dialog(Bjorn, "Get it?"),
+        new dialog(Beret, "......."),
+        new dialog(Bjorn, "Get it?"),
+        new dialog(Lussie, "Honesssstly, no."),
+        new dialog(Beret, "Don't sta-- him-- it---"),
+        new dialog(Bjorn, "Weapon... Wee pun..."),
+        new dialog(Beret, "Get that wee pun-- wee-- WEAPON and st-- with the puns. Over."),
+        new dialog(Lussie, "Sssssss. Dear god."),
+        new ChangeConv(9),
+    ]),
 
-new Conv([
-    new dialog(Beret, "I'm sure she w-- but-- one shuttle."),
-    new dialog(Bjorn, "What do you mean we only have one shuttle? Where are the others?"),
-    new dialog(Beret, "Their syst-- failing."),
-    new dialog(Bjorn, "Right."),
-    new dialog(Bjorn, "What about sending Lussie back and have the anthropologist come instead?"),
-    new dialog(Lussie, "What? Why? That makesss no sssensssse!"),
-    new dialog(Beret, "What about sending Björn back and send the anthropologist instead?"),
-    new dialog(Bjorn, "Nevermind."),
-    new dialog(Lussie, "In your ssstupid face."),
-    new ChangeConv (9),
-]),
+    new Conv([
+        new dialog(Beret, "I'm sure she w-- but-- one shuttle."),
+        new dialog(Bjorn, "What do you mean we only have one shuttle? Where are the others?"),
+        new dialog(Beret, "Their syst-- failing."),
+        new dialog(Bjorn, "Right."),
+        new dialog(Bjorn, "What about sending Lussie back and have the anthropologist come instead?"),
+        new dialog(Lussie, "What? Why? That makesss no sssensssse!"),
+        new dialog(Beret, "What about sending Björn back and send the anthropologist instead?"),
+        new dialog(Bjorn, "Nevermind."),
+        new dialog(Lussie, "In your ssstupid face."),
+        new ChangeConv(9),
+    ]),
 
-new Conv([
-    new dialog(Beret, "Roger that. G-- luck!"),
-    new dialog(NarratorBjorn, "And as the Captain hung up, the entrance fell into complete silence again. Until Lussie decided to speak up again..."),
-    new ChangeConv (1),
-]),
+    new Conv([
+        new dialog(Beret, "Roger that. G-- luck!"),
+        new dialog(NarratorBjorn, "And as the Captain hung up, the entrance fell into complete silence again. Until Lussie decided to speak up again..."),
+        new ChangeConv(1),
+    ]),
 ]);
 //SCENE 1 END
 //ACT 2 END
@@ -1487,11 +1515,11 @@ new Conv([
 //ACT 1
 //SCENE 1 : INTRODUCTION
 //SCENE 1 CHOICES
-var A1S1Q1 = new Choice(function(){changeConv(3)}, "What is all of this, exactly?");
-var A1S1Q2 = new Choice(function(){changeConv(4)}, "Who made this?");
-var A1S1Q3 = new Choice(function(){changeConv(5)}, "What do you know about the Necralis system?");
-var A1S1NQ = new Choice(function(){changeConv(6)}, "No more questions.");
-var Letsgo = new Choice(function(){changeScene(A2S1, 0)}, "Let's go!");
+var A1S1Q1 = new Choice(function () { changeConv(3) }, "What is all of this, exactly?");
+var A1S1Q2 = new Choice(function () { changeConv(4) }, "Who made this?");
+var A1S1Q3 = new Choice(function () { changeConv(5) }, "What do you know about the Necralis system?");
+var A1S1NQ = new Choice(function () { changeConv(6) }, "No more questions.");
+var Letsgo = new Choice(function () { changeScene(A2S1, 0) }, "Let's go!");
 //SCENE 1 CHOICES END 
 
 var A1S1 = new Scene([
@@ -1524,24 +1552,24 @@ var A1S1 = new Scene([
         new dialog(Coati, "..."),
         new dialog(Beret, "..."),
         new Background(getBackgroundURL("black")),
-        new dialog (NarratorBeret, "As we all observed a dumbfounded silence, we stared out the window. The empty, dark void of space in front of us was filled to the brim with drifting artifacts of the past… Hundreds, thousands of them."),
-        new dialog (NarratorBeret, "Thousands of floating coffins, graves, mausoleums, chapels-- in appearance quite close to what you would expect from 20th century Western Europe on Terra."),
-        new dialog (NarratorBeret, "Gravity-less and made of shining processed stone-like materials far beyond our grasp of technology."),
+        new dialog(NarratorBeret, "As we all observed a dumbfounded silence, we stared out the window. The empty, dark void of space in front of us was filled to the brim with drifting artifacts of the past… Hundreds, thousands of them."),
+        new dialog(NarratorBeret, "Thousands of floating coffins, graves, mausoleums, chapels-- in appearance quite close to what you would expect from 20th century Western Europe on Terra."),
+        new dialog(NarratorBeret, "Gravity-less and made of shining processed stone-like materials far beyond our grasp of technology."),
         new Background(getBackgroundURL("maindeck")),
-        new dialog (Beret, "I can’t say I have ever seen anything even close to this in my entire life. I’d stake my beret on it."),
-        new dialog (Coati, "Is that a cathedral drifting at the back ?!"),
-        new dialog (Beret, "..."),
+        new dialog(Beret, "I can’t say I have ever seen anything even close to this in my entire life. I’d stake my beret on it."),
+        new dialog(Coati, "Is that a cathedral drifting at the back ?!"),
+        new dialog(Beret, "..."),
         new dialog(MysteryThalea, "The Floating Graveyard of Necralis."),
-        new dialog (Bjorn, "The Floating… Wait!"),
-        new dialog (Bjorn, "Who are you? What are you doing here?!"),
-        new dialog (Beret, "Björn, don’t fret… I called her here. Thank you for coming, Thaléa."),
-        new dialog (Thalea, "The pleasure is mine, Captain Beret."),
-        new dialog (NarratorBeretThalea, "This dramatic Finch is part of the new crew members I’ve had to welcome. She is to replace our former anthropologist who went to put her many years of experience of contact with alien cultures to the service of the Terran forces."),
-        new dialog (NarratorBeretThalea, "Thaléa is fresh out of university… Which means that she has a vivid mind and a great depth of current anthropological knowledge, but also a very high opinion of herself and a tendency to talk over-"),
-        new dialog (Thalea, "My name is Thaléa, and I am the new anthropologist expert of the 3MP4-NADA. Nice to meet you all."),
-        new dialog (Bjorn, "Nice to meet you, Thaléa. I am Björn, the Chief of Security. "),
-        new dialog (Coati, "We have already met before-- I am Lieutenant Coati, as you know."),
-        new dialog (Beret, "Thank you Thaléa. Now, can you-"),
+        new dialog(Bjorn, "The Floating… Wait!"),
+        new dialog(Bjorn, "Who are you? What are you doing here?!"),
+        new dialog(Beret, "Björn, don’t fret… I called her here. Thank you for coming, Thaléa."),
+        new dialog(Thalea, "The pleasure is mine, Captain Beret."),
+        new dialog(NarratorBeretThalea, "This dramatic Finch is part of the new crew members I’ve had to welcome. She is to replace our former anthropologist who went to put her many years of experience of contact with alien cultures to the service of the Terran forces."),
+        new dialog(NarratorBeretThalea, "Thaléa is fresh out of university… Which means that she has a vivid mind and a great depth of current anthropological knowledge, but also a very high opinion of herself and a tendency to talk over-"),
+        new dialog(Thalea, "My name is Thaléa, and I am the new anthropologist expert of the 3MP4-NADA. Nice to meet you all."),
+        new dialog(Bjorn, "Nice to meet you, Thaléa. I am Björn, the Chief of Security. "),
+        new dialog(Coati, "We have already met before-- I am Lieutenant Coati, as you know."),
+        new dialog(Beret, "Thank you Thaléa. Now, can you-"),
     ]),
 
     new Conv([
@@ -1611,7 +1639,7 @@ var A1S1 = new Scene([
         new dialog(NarratorBeretLussie, "Lussie is also an esteemed crew member of this ship. She can do a little bit of everything, although she socially clashes with several crew members, because of her tendency of being a wee bit talkative and sometimes judgemental. Who doesn't like a good gossip?"),
         new dialog(Beret, "Ah! Lussie, there you are. Well, I think you can both get prepared. To the crypt! I should still be able to communicate with you by radio. Good luck."),
         new dialog(NarratorBeret, "On those words, Björn and Lussie left the main deck, one looking significantly happier than the other. I went back to my station, ready to follow their adventure from afar."),
-        new ChoiceArray ([Letsgo]),
+        new ChoiceArray([Letsgo]),
     ]),
 
 ]);
@@ -1644,31 +1672,31 @@ async function Next() {
             var currentChoice = event.choices[i];
             var currentButton = choicebuttons[i];
             currentButton.innerHTML = currentChoice.text;
-            currentButton.onclick = currentChoice.action; 
+            currentButton.onclick = currentChoice.action;
             currentButton.style.display = "block";
-        } 
+        }
     }
 
-        if (event instanceof dialog) {
-            choiceBox.style.display = "none";
-            nextBox.style.display = "block";
-            //buttons display
-            b1.innerHTML = "";
-            b2.innerHTML = "";
-            b3.innerHTML = "";
-            b4.innerHTML = "";
-            b1.style.display = "none";
-            b2.style.display = "none";
-            b3.style.display = "none";
-            b4.style.display = "none";
-            //buttons display
-            lbname.innerHTML = event.character.name;
-            if (event.character.name == "") {
-                Nameboxoff();
-            }
-            else {
-                NameboxOn();
-            }
+    if (event instanceof dialog) {
+        choiceBox.style.display = "none";
+        nextBox.style.display = "block";
+        //buttons display
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b4.innerHTML = "";
+        b1.style.display = "none";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+        //buttons display
+        lbname.innerHTML = event.character.name;
+        if (event.character.name == "") {
+            Nameboxoff();
+        }
+        else {
+            NameboxOn();
+        }
         showSprite(event);
         var currentText = ""
         nextButton.disabled = true;
@@ -1723,7 +1751,7 @@ function getBackgroundURL(path) {
 }
 
 function showBackground(background) {
-    var img = background.img 
+    var img = background.img
     imgBackground.src = img
 }
 
