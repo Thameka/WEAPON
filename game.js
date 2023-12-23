@@ -1443,7 +1443,7 @@ new dialog(Lussie, "Terrible. My earssss are bleeding."),
 new dialog(Bjorn, "What ears? I don't see any ears."),
 new dialog(Lussie, "......."),
 new dialog(Bjorn, "Roger that, Captain Béret. Back to the ship!"),
-new ChangeScene(A3S1, 0)
+new ChangeScene(A3S1, 0),
 ]),
 
 new Conv ([
