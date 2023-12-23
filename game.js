@@ -1320,6 +1320,7 @@ var A2S141 = new Choice(function(){if(checkInventory("serum")){
 }, "We got the weapon. We'll head back to the ship.");
 var A2S142 = new Choice(function(){changeConv(12)}, "I think the new anthropologist would like to see this.");
 var A2S143 = new Choice(function(){changeConv(13)}, "I'll hang up.");
+var Letsgo2 = new Choice(function(){changeScene(A3S1, 0)}, "Let's go!");
 //SCENE 1 CHOICES END 
 
 var A2S1 = new Scene([
@@ -1443,7 +1444,7 @@ new dialog(Lussie, "Terrible. My earssss are bleeding."),
 new dialog(Bjorn, "What ears? I don't see any ears."),
 new dialog(Lussie, "......."),
 new dialog(Bjorn, "Roger that, Captain Béret. Back to the ship!"),
-new ChangeScene(A3S1, 0),
+new ChoiceArray([Letsgo2]),
 ]),
 
 new Conv ([
