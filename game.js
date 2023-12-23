@@ -179,7 +179,7 @@ var A3thatsall = new Choice(function(){if(checkInventory("TruthWeapon")){
     }}, "I think we've said it all.");
 
 var A3room = new Choice(function(){changeConv (6)}, "What is all of this in your room?");
-var A3weapon = new Choice(function(){changeConv (8)}, "Why did you become an anthropologist?"); 
+var A3anthropologist = new Choice(function(){changeConv (8)}, "Why did you become an anthropologist?"); 
 
 var A3pray = new Choice(function(){if(checkInventory("Love")){
     changeConv(13);}
@@ -1365,10 +1365,10 @@ new dialog(Bjorn, "I see."),
 new dialog(Lussie, "..."),
 new dialog(Bjorn, "..."),
 new dialog(Lussie, "... Sssso I applied directly for the 3MP4-NADA because it does have a very ssssolid reputation and..."),
-new dialog(Lussie, "................................................................................................................................."),
-new dialog(Lussie, "................................................................................................................................."),
-new dialog(Lussie, "................................................................................................................................."),
-new dialog(Lussie, "................................................................................................................................."),
+new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
+new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
+new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
+new dialog(Lussie, ".......................... .......................... .......................... .......................... .......................... "),
 new dialog(Lussie, "Then, Captain Beret contacted me, and--"),
 new dialog(Bjorn, "Sorry for interrupting you but I think we should end this mono... this conversation. (I'm afraid the Danish will find us before you're over with your story and I really can't take it anymore.)"),
 new dialog(Lussie, "Ssssssss... Fine."),
