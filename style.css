@@ -208,15 +208,15 @@ button:hover {
     flex-direction: column;
     align-items: flex-start;
     overflow:auto;
-    font-size: 1.6vw;
 }
 
 .cb-container > button {
     background-color:#1D1E26;
     border:none;
     text-align: left;
-    font-size: 1.6vw;
+    font-family: 'Courier Prime', monospace;
     margin:3%;
+    font-size: 1em;
     transition-duration: 0.4s;
     padding: 5px 5px;
   }
