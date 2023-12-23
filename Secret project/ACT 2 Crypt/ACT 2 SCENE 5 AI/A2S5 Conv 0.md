@@ -1,0 +1,21 @@
+new dialog(NarratorBjorn, "As we entered the room behind the heavy metal door, we both flinched. The room was so brightly lit, even compared to the neon lights in the corridor, that we had both gotten blindsinded for a moment."),
+new dialog(NarratorBjorn, "Recovering our senses, we realized that the room was quite cold. As if it were a fridge of some sort. What needed such efficient cooling down?"),
+new dialog(NarratorBjorn, "The floor, the ceiling, the walls-- Everything was made out of a metal that I couldn't really identify. It looked like iron but somewhat different. Although it was difficult to explain, it smelled different-- If I felt Terran in the other rooms, in that room I felt alien."),
+new dialog(NarratorBjorn, "At the very back of the room was what looked like a bright, round gate. I could hear from it the faint sound of flickering electricity, of a soaring fireplace. But also the sound of swirling waves of water, of cascading landslides."),
+new dialog(NarratorBjorn, "Shouting at protests, trees falling down. Roaring tornadoes."),
+new dialog(NarratorBjorn, "Accelerating beeping. Gunshot. The buzz of a taser. Languages I'd never heard."),
+new dialog(NarratorBjorn, "Although I knew it was only soundwaves, it conjured images in my head that conveyed a very clear message: keep out."),
+new dialog(NarratorBjorn, "Lussie could hear it too. So we only kept looking at it from a distance."),
+new dialog(NarratorBjorn, "When all of a sudden, over the noise, all around us-- a voice spoke out from nowhere."),
+new dialog(Zhuraid, "Welcome, dear guests."),
+new dialog(Zhuraid, "Welcome to my humble tomb."),
+new dialog(Lussie, "That cannot be..."),
+new dialog(Zhuraid, "My name is Zhuraid Uv'air."),
+new dialog(Bjorn, "... Nice to meet you, Zhuraid. My name is Björn."),
+new dialog(Lussie, "Ssssss."),
+new dialog(Bjorn, "Her name is Lussie."),
+new dialog(Bjorn, "I think we should talk."),
+new dialog(Zhuraid, "I am all ears, dear guests."),
+
+Inventory : AIPASS
+[[A2S5 Conv 1]]

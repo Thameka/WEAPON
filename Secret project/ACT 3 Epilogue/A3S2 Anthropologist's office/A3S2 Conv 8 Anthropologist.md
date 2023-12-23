@@ -1,0 +1,26 @@
+new dialog(Thalea, "I've always been fascinated by foreign cultures. It started out with languages."),
+new dialog(Thalea, "Then, I found out that if I became an anthropologist, I could fly away from Terra."),
+new dialog(Bjorn, "Do you have something against Terra?"),
+new dialog(Thalea, "No... Not really. I just like moving around. Feeling free."),
+new dialog(Bjorn, "I see. You are a bird after all."),
+new dialog(Bjorn, "How did you get into languages in the first place?"),
+new dialog(Thalea, "Sweden."),
+new dialog(Bjorn, "Sweden? Interesting. I'm Swedish."),
+new dialog(Thalea, "No kidding. I would never have guessed..."),
+new dialog(Thalea, "Björn."),
+new dialog(Bjorn, "... I could be norwegian."),
+new dialog(Thalea, "Too discreet."),
+new dialog(Bjorn, "... Danish..."),
+new dialog(Thalea, "Don't see any beer can in your hand."),
+new dialog(Bjorn, "True."),
+new dialog(Bjorn, "Did you know that danish kids..."),
+new dialog(Thalea, "No Björn. I'm stopping you right there. No."),
+new dialog(Bjorn, "... have trouble pronounc-"),
+new dialog(Thalea, "This is my office and I can expel you from it at any time."),
+new dialog(Bjorn, "(I'd like to see you try.)"),
+new dialog(Thalea, "Jokes aside, I've known even before learning your name... For some reason."),
+new dialog(Bjorn, "(And I have a feeling you're French, although I couldn't explain why.)"),
+
+1. What is all of this in your room? [[A3S2 Conv 6 Room]]
+3. About the expedition... [[A3S2 Conv 1 Expedition]]
+4. I think we've said it all. (if TruthWeapon [[A3S2 Conv 3 NothingMore]] else [[A3S2 Conv 5 YesMore]])

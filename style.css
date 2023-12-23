@@ -1,0 +1,263 @@
+:root{
+    background-color: #182859;
+}
+
+body{
+	/*Basic Font Styling*/
+  
+  font-family: 'Courier Prime', monospace;
+	font-size:30px;
+	color:whitesmoke;
+    overflow:hidden;
+}
+
+/*Start screen items*/
+#startScreen {
+    height:90vh;
+    width:90vw; 
+}
+
+/*Start screen options styling */   
+#optionsContainer {
+    background-color:#303740;
+    height: 38%;
+    width: 40%;     
+    margin:auto;
+    position: absolute; 
+    top: 37%; 
+    margin-left: 1vw;  
+    padding: 10px 10px;
+    border: 3px solid #1D1E26;
+}
+
+.flex-container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.flex-container1 > div {
+    background-color:#1D1E26;
+    width:40%;
+    height:auto;
+    margin:3%;
+    text-align: center;
+  }
+
+/*Start screen items END*/
+
+/*Game screen items*/
+#gameScreen {
+    height:97vh;
+    width:97vw;
+    background-size: cover;
+}
+
+/*Character sprite styling*/
+#characterSprite {
+width:60%;
+height:80%;
+padding:0px;
+margin:0px;
+border:none;
+position:absolute;
+bottom:20%;
+left:26%;
+z-index:-2;
+}
+
+.imgCS {
+width:auto;
+height:100%;
+padding:0px;
+margin:0px;
+border:none;
+position:absolute;
+bottom:0%;
+left:0%;
+z-index:-2;
+}
+
+/*namebox styling*/
+#nameBox {
+height:5%;
+width:20%;
+padding:5px;
+}
+
+.nb-container {
+    background-color: #303740;
+    border: 0.5vw solid #1D1E26;
+    border-radius: 5px;
+    display: flex;
+    position:absolute;
+    bottom: 36.5%;
+    left: 2%;
+    font-size: 2vw;
+}
+
+/*background styling*/
+.imgBG {
+padding:0px;
+margin:0px;
+max-width: 100%;
+height:auto;
+border:none;
+position:absolute;
+top:0px;
+left:0px;
+z-index:-4;
+}
+
+/*static background box styling*/
+#mainBox {
+  display: flex;
+  justify-content:left;
+  flex-direction: row;
+  background-color: #1D1E26;
+  width:98vw;
+  height:34vh;
+  position:absolute;
+  bottom:2%;
+  left:1%;
+  border-radius: 5px;
+}
+
+/*textbox styling*/
+#textBox {
+    background-color: #303740;
+    margin:0.7vw;
+    position:absolute;
+    padding: 15px 10px;
+    width: 65%;
+    height: auto;
+    top:1%;
+    bottom: 1%;
+    text-align: left;
+    font-size: 1.6vw;
+    color:whitesmoke;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+/*button styling*/
+button {
+    background-color:#303740;
+    color:whitesmoke;
+    border: 3px solid #1D1E26;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #1f2329;
+}
+
+
+
+/*Next box styling*/
+#nextBox {
+    width:15%;
+    height: auto;
+    top:1%;
+    bottom: 1%;
+    margin:1vw;
+    position:absolute;
+}
+
+.nxb-container {
+    background-color: #1D1E26;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    left:70%;
+}
+
+.nxb-container > button {
+        border:2px whitesmoke;
+        background-color: #1D1E26;
+        height:50%;
+        width:50%;
+        margin:auto;
+        font-size: 12vw;
+      }
+
+.nxb-container > button:hover {
+    background-color: #1D1E26;
+    color:lightgray;
+   }
+   
+
+/*Choice box styling*/
+#choiceBox {
+  width:28%;
+  height: auto;
+  top:1%;
+  bottom: 1%;
+  margin:1vw;
+  position:absolute;
+  left:70%;
+}
+
+.cb-container {
+    background-color: #303740;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow:auto;
+}
+
+.cb-container > button {
+    background-color:#1D1E26;
+    border:none;
+    text-align: left;
+    font-family: 'Courier Prime', monospace;
+    margin:3%;
+    font-size: 0.6em;
+    transition-duration: 0.4s;
+    padding: 5px 5px;
+  }
+
+.cb-container > button:hover {
+     background-color: #17171e;
+}
+/*Game Screen items END*/
+
+
+/*Webkit custom + animations*/
+ /*Slider customization*/   
+input[type=range]::-webkit-slider-runnable-track {  
+    -webkit-appearance: none;
+    padding: 0;                           
+    color: rgb(18, 31, 31);               
+    background:whitesmoke;             
+    box-sizing: border-box;     
+  }
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance:none;
+    width: 2vw;
+    height: 2vh;
+    border-radius: 0px;
+    background-color:rgb(18, 31, 31);
+  }
+
+  /*Scrollbar customization*/
+  ::-webkit-scrollbar {
+    width:10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgb(24, 40, 40)
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: darkslategray;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(58, 92, 92);
+    transition-duration: 0.4s;
+  }
+

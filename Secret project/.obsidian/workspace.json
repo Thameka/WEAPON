@@ -1,0 +1,426 @@
+{
+  "main": {
+    "id": "ed592cf1a823e86c",
+    "type": "split",
+    "children": [
+      {
+        "id": "25d9674346aa5385",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee1123ca8a8a54e0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "fc15c0e3ab0d2c9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 0 - Stardate....md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3453ca85e70b5468",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ca98db57e9fab89e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 2 Questions Thaléa.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2073a72de83bae8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 3 Q1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b6def11e2f3119f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 4 Q2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "542eaa647ceab137",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 5 Q3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "866d97065ceeabaf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 1/SCENE INTRODUCTION/A1S1 Conv 3 Q1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6e356ac2c7516fea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 0.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b209d7e3968636f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f2edabb875306fe4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 2 Talk to Lussie.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "05f3a4cebec7e8ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 2 Talk to Lussie.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c59bfe7d32470d9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 4 New recruits.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f575cbb3ff555384",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 5 likeher.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2bb92e107a47e40b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 8 New recruits 2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c1c3c1ec99e7c9fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 9.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bc18b1be18697ce2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 10 serumyes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "36b889b1958b38b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 11 serumno.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ffc912daa1edfcfd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 12 Anthropologist.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "97146d865b17c9c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE/A2S1 Conv 0.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "214b0b53c7755143",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ACT 3 Epilogue/A3S3 Conclusion/A3S3 Conv 0 Conclusion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 20
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "794f2124be5f30a6",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c5d24a1d5995286",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29c759794187dd4c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "67f905865556d72e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b1659b15f0943201",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b31b77e19241b3bb",
+    "type": "split",
+    "children": [
+      {
+        "id": "2657eeede625c34d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fff3880aff1396dc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ACT 3 Epilogue/A3S3 Conclusion/A3S3 Conv 0 Conclusion.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "38f0557cb6a6f596",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ACT 3 Epilogue/A3S3 Conclusion/A3S3 Conv 0 Conclusion.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e4628d8a60473664",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e956703ce83aad88",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ACT 3 Epilogue/A3S3 Conclusion/A3S3 Conv 0 Conclusion.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "214b0b53c7755143",
+  "lastOpenFiles": [
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 22 Hug.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 21 Waiting.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 20 Going.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 19 Soft.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 18 Lovers.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 17 Friends.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 16 it's too early.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 15 Definitely.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 14 PrayNotFlirt.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 13 PrayFlirt.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 12 right weapon..md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 11 wrong weapon.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 10 right author..md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 9 wrong author.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 8 Anthropologist.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 7 NatureWeapon.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 6 Room.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 5 YesMore.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 4 TerraNecralis.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 3 NothingMore.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 2 Thaléa.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 1 Expedition.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office/A3S2 Conv 0.md",
+    "ACT 3 Epilogue/A3S1 Main deck/A3S1 Conv 0.md",
+    "ACT 3 Epilogue/A3S3 Conclusion/A3S3 Conv 0 Conclusion.md",
+    "ACT 3 Epilogue/A3S3 Conclusion",
+    "ACT 3 Epilogue/Untitled.md",
+    "ACT 3 Epilogue/A3S2 Anthropologist's office",
+    "ACT 3 Epilogue/A3S1 Main deck",
+    "ACT 3 Epilogue",
+    "Untitled.canvas",
+    "ACT 2 Crypt/ACT 2 SCENE 5 AI",
+    "ACT 2 Crypt/ACT 2 SCENE 3 TOMB",
+    "ACT 2 Crypt/ACT 2 SCENE 4 CHURCH",
+    "ACT 2 Crypt/ACT 2 SCENE 2 CORRIDOR",
+    "ACT 2 Crypt/ACT 2 SCENE 1 ENTRANCE",
+    "ACT 1"
+  ]
+}
