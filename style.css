@@ -215,8 +215,8 @@ button:hover {
     border:none;
     text-align: left;
     font-family: 'Courier Prime', monospace;
+    font-size: 1.5vw;
     margin:3%;
-    font-size: 0.6em;
     transition-duration: 0.4s;
     padding: 5px 5px;
   }
